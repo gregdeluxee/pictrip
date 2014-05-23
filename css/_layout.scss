@@ -1,0 +1,371 @@
+body{
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    font-family: "Open sans", sans-serif;
+    font-size: 13px;
+    line-height: 1;
+    background: $lowBlue;
+}
+
+
+.hidden{display: none;}
+.overflowHidden{overflow: hidden;}
+h1, h2, h3{margin: 0;}
+
+h2{
+    font-size: 36px;
+}
+h3{
+    font-size: 18px;
+}
+a{
+    text-decoration: none;
+    color: $midBlue;
+}
+
+*{@include box-sizing(border-box);}
+
+.left{@include transform(translate3D(-100%, 0, 0));}
+.center{@include transform(translate3D(0, 0, 0));}
+.right{@include transform(translate3D(100%, 0, 0));}
+
+input[type=text],input[type=password],input[type=email]{
+    width: 100%;
+    background: rgba(255,255,255,1);
+    border: none;
+    border-radius: 20px;
+    padding: 8px 10px;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+input[type=submit]{
+    background: $blue;
+    box-sizing: content-box;
+    border: none;
+    border-radius: 50px;
+    padding: 8px 10px;
+    color: #fff;
+}
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: $darkBlue;
+}
+input:focus{
+    outline: none !important;
+}
+
+
+.loader{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 6000;
+    background: url("../img/loader.gif") no-repeat center center,
+    rgba(0,0,0,.6);
+}
+
+.leftSwipe{
+    position: absolute;
+    width: 10%;
+    height: 100%;
+}
+
+#nav{
+    position: absolute;
+    z-index: 5000;
+    bottom: 0;
+    background: rgba(0,0,0,0.2);
+    width: 100%;
+    border-top: solid 2px #434897;
+    @include clearfix;
+
+
+    a#menuButton{
+        display: inline-block;
+        border: none;
+        background: none;
+        width: 40px;
+        margin: 10px 5px 10px -10px;
+        padding: 0;
+        vertical-align: middle;
+    
+
+        span{
+            position: relative;
+            display: block;
+            height: 4px;
+            width: 100%;
+            margin-bottom: 6px;
+            background: #fff;
+        
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+    .center{
+        position: absolute;
+        width: 70%;
+        top: 10px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+    }
+
+    form{
+        display: inline-block;
+        margin: 0 auto;
+        vertical-align: middle;
+        position: relative;
+        width: 80%;
+    
+        input[type=text]{
+            width: 100%;
+            background: rgba(0,0,0,0.2);
+            border: none;
+            border-radius: 20px;
+            padding: 5px 10px;
+            margin: 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        input[type=text]::-webkit-input-placeholder { /* WebKit browsers */
+            color:    #fff;
+        }
+
+        input[type=submit]{
+            display: none;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            border-radius: 50px;
+            padding: 4px 5px;
+            color: #fff;
+        }
+
+        input[type=text].search{
+            width: 70%;     
+        }
+        input[type=submit].search{
+            display: inline-block;
+        }
+    }
+}
+
+a#takePic{
+    position: absolute;
+    top: 9px;
+    right: 10px;
+    text-indent: -99999px;
+    width: 33px;
+    height: 25px;
+    display: inline-block;
+    background: url("../img/photo.png") no-repeat;
+    background-size: cover;
+    vertical-align: middle;
+
+}
+#localiseMe{
+    position: relative;
+    text-indent: -99999px;
+    width: 17px;
+    height: 25px;
+    display: inline-block;
+    background: url("../img/localise.png") no-repeat;
+    background-size: cover;
+    vertical-align: middle;
+}
+
+#menu{
+    z-index: 5000;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    @include transition-duration(.5s);
+
+    a#menuButtonOn{
+        position: absolute;
+        display: inline-block;
+        bottom: 0px;
+        left: 20px;
+        border: none;
+        background: none;
+        width: 30px;
+        margin: 10px 5px 10px -10px;
+        padding: 0;
+        vertical-align: middle;
+    
+
+        span{
+            position: relative;
+            display: block;
+            height: 4px;
+            width: 100%;
+            margin-bottom: 6px;
+            background: $darkBlue;
+        
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    ul{
+        position: relative;
+        top: 35%;
+        line-height: 0;
+        text-align: center;
+
+        li{
+
+            a{
+                font-size: 36px;
+                line-height: 1.5;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.tutoriel{
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    p{
+        font-weight: 700;
+        font-size: 1.5em;
+        color: $blue;
+        width: 60%;
+    }
+    .tutoFav{
+        position: absolute;
+        right: 20px;
+        top: 40%;
+        text-align: right;
+
+        &:after{
+            content:"";
+            position: absolute;
+            bottom: 110%;
+            right: 0px;
+            width: 50px;
+            height: 100px;
+            background: url("../img/arrow.png") no-repeat;
+            background-size: cover;
+            @include transform(rotateZ(190deg));
+        }
+    }
+    .tutoPhoto{
+        position: absolute;
+        right: 20px;
+        bottom: 200px;
+        text-align: right;
+
+        &:after{
+            content:"";
+            position: absolute;
+            top: 110%;
+            right: 0px;
+            width: 50px;
+            height: 130px;
+            background: url("../img/arrow.png") no-repeat;
+            background-size: 100% 100%;
+            @include transform(rotateZ(-10deg));
+        }
+    }
+    .tutoSearch{
+        position: absolute;
+        left: 20px;
+        bottom: 110px;
+
+        &:after{
+            content:"";
+            position: absolute;
+            top: 110%;
+            left: 20%;
+            width: 25px;
+            height: 50px;
+            background: url("../img/arrow.png") no-repeat;
+            background-size: cover;
+            @include transform(rotateZ(-5deg));
+        }
+    }
+}
+
+section.view{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: $lowBlue;
+}
+
+.picsFixe{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.picsContainer{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    @include transition-duration(.5s);
+}
+.pics{
+    position: relative;
+    display: inline-block;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/maroc.jpg");
+    background-position: center;
+    background-size: cover;
+
+
+    .comment{
+        position: relative;
+        width: 85%;
+        margin: 0;
+    }
+    .comment, h2, h3{
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    h2, h3{
+        margin-top: 5px;
+    }
+    h3{
+        display: inline-block;
+    }
+    .likes{
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+        margin-top: 10px;
+    
+        span{
+            vertical-align: middle;
+        }
+    }
+    .heart{
+        width: 22px;
+        height: 20px;
+        display: inline-block;
+        background: url("../img/heart.png") no-repeat;
+        background-size: cover;
+    }
+
+}

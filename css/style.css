@@ -1,0 +1,632 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../../../../Bureau/compass.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Bureau/compass.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Bureau/compass.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Bureau/compass.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Bureau/compass.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Bureau/compass.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Bureau/compass.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Bureau/compass.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Bureau/compass.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/************************************************************************/
+/*	Colors Vars                                                          
+/************************************************************************/
+/************************************************************************/
+/*	Transition Default
+/************************************************************************/
+/* line 1, _layout.scss */
+body {
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  font-family: "Open sans", sans-serif;
+  font-size: 13px;
+  line-height: 1;
+  background: #f4f5f6;
+}
+
+/* line 12, _layout.scss */
+.hidden {
+  display: none;
+}
+
+/* line 13, _layout.scss */
+.overflowHidden {
+  overflow: hidden;
+}
+
+/* line 14, _layout.scss */
+h1, h2, h3 {
+  margin: 0;
+}
+
+/* line 16, _layout.scss */
+h2 {
+  font-size: 36px;
+}
+
+/* line 19, _layout.scss */
+h3 {
+  font-size: 18px;
+}
+
+/* line 22, _layout.scss */
+a {
+  text-decoration: none;
+  color: #6a72f0;
+}
+
+/* line 27, _layout.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 29, _layout.scss */
+.left {
+  -webkit-transform: translate3D(-100%, 0, 0);
+  -moz-transform: translate3D(-100%, 0, 0);
+  -ms-transform: translate3D(-100%, 0, 0);
+  -o-transform: translate3D(-100%, 0, 0);
+  transform: translate3D(-100%, 0, 0);
+}
+
+/* line 30, _layout.scss */
+.center {
+  -webkit-transform: translate3D(0, 0, 0);
+  -moz-transform: translate3D(0, 0, 0);
+  -ms-transform: translate3D(0, 0, 0);
+  -o-transform: translate3D(0, 0, 0);
+  transform: translate3D(0, 0, 0);
+}
+
+/* line 31, _layout.scss */
+.right {
+  -webkit-transform: translate3D(100%, 0, 0);
+  -moz-transform: translate3D(100%, 0, 0);
+  -ms-transform: translate3D(100%, 0, 0);
+  -o-transform: translate3D(100%, 0, 0);
+  transform: translate3D(100%, 0, 0);
+}
+
+/* line 33, _layout.scss */
+input[type=text], input[type=password], input[type=email] {
+  width: 100%;
+  background: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 10px;
+  margin: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* line 43, _layout.scss */
+input[type=submit] {
+  background: #d6d7f0;
+  box-sizing: content-box;
+  border: none;
+  border-radius: 50px;
+  padding: 8px 10px;
+  color: #fff;
+}
+
+/* line 51, _layout.scss */
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #434897;
+}
+
+/* line 54, _layout.scss */
+input:focus {
+  outline: none !important;
+}
+
+/* line 59, _layout.scss */
+.loader {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  z-index: 6000;
+  background: url("../img/loader.gif") no-repeat center center, rgba(0, 0, 0, 0.6);
+}
+
+/* line 69, _layout.scss */
+.leftSwipe {
+  position: absolute;
+  width: 10%;
+  height: 100%;
+}
+
+/* line 75, _layout.scss */
+#nav {
+  position: absolute;
+  z-index: 5000;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  border-top: solid 2px #434897;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 85, _layout.scss */
+#nav a#menuButton {
+  display: inline-block;
+  border: none;
+  background: none;
+  width: 40px;
+  margin: 10px 5px 10px -10px;
+  padding: 0;
+  vertical-align: middle;
+}
+/* line 95, _layout.scss */
+#nav a#menuButton span {
+  position: relative;
+  display: block;
+  height: 4px;
+  width: 100%;
+  margin-bottom: 6px;
+  background: #fff;
+}
+/* line 103, _layout.scss */
+#nav a#menuButton span:last-child {
+  margin-bottom: 0;
+}
+/* line 108, _layout.scss */
+#nav .center {
+  position: absolute;
+  width: 70%;
+  top: 10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+/* line 118, _layout.scss */
+#nav form {
+  display: inline-block;
+  margin: 0 auto;
+  vertical-align: middle;
+  position: relative;
+  width: 80%;
+}
+/* line 125, _layout.scss */
+#nav form input[type=text] {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin: 0;
+  color: #fff;
+  text-align: center;
+}
+/* line 136, _layout.scss */
+#nav form input[type=text]::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #fff;
+}
+/* line 140, _layout.scss */
+#nav form input[type=submit] {
+  display: none;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50px;
+  padding: 4px 5px;
+  color: #fff;
+}
+/* line 149, _layout.scss */
+#nav form input[type=text].search {
+  width: 70%;
+}
+/* line 152, _layout.scss */
+#nav form input[type=submit].search {
+  display: inline-block;
+}
+
+/* line 158, _layout.scss */
+a#takePic {
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  text-indent: -99999px;
+  width: 33px;
+  height: 25px;
+  display: inline-block;
+  background: url("../img/photo.png") no-repeat;
+  background-size: cover;
+  vertical-align: middle;
+}
+
+/* line 171, _layout.scss */
+#localiseMe {
+  position: relative;
+  text-indent: -99999px;
+  width: 17px;
+  height: 25px;
+  display: inline-block;
+  background: url("../img/localise.png") no-repeat;
+  background-size: cover;
+  vertical-align: middle;
+}
+
+/* line 182, _layout.scss */
+#menu {
+  z-index: 5000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+/* line 190, _layout.scss */
+#menu a#menuButtonOn {
+  position: absolute;
+  display: inline-block;
+  bottom: 0px;
+  left: 20px;
+  border: none;
+  background: none;
+  width: 30px;
+  margin: 10px 5px 10px -10px;
+  padding: 0;
+  vertical-align: middle;
+}
+/* line 203, _layout.scss */
+#menu a#menuButtonOn span {
+  position: relative;
+  display: block;
+  height: 4px;
+  width: 100%;
+  margin-bottom: 6px;
+  background: #434897;
+}
+/* line 211, _layout.scss */
+#menu a#menuButtonOn span:last-child {
+  margin-bottom: 0;
+}
+/* line 217, _layout.scss */
+#menu ul {
+  position: relative;
+  top: 35%;
+  line-height: 0;
+  text-align: center;
+}
+/* line 225, _layout.scss */
+#menu ul li a {
+  font-size: 36px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+/* line 234, _layout.scss */
+.tutoriel {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 241, _layout.scss */
+.tutoriel p {
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #d6d7f0;
+  width: 60%;
+}
+/* line 247, _layout.scss */
+.tutoriel .tutoFav {
+  position: absolute;
+  right: 20px;
+  top: 40%;
+  text-align: right;
+}
+/* line 253, _layout.scss */
+.tutoriel .tutoFav:after {
+  content: "";
+  position: absolute;
+  bottom: 110%;
+  right: 0px;
+  width: 50px;
+  height: 100px;
+  background: url("../img/arrow.png") no-repeat;
+  background-size: cover;
+  -webkit-transform: rotateZ(190deg);
+  -moz-transform: rotateZ(190deg);
+  -ms-transform: rotateZ(190deg);
+  -o-transform: rotateZ(190deg);
+  transform: rotateZ(190deg);
+}
+/* line 265, _layout.scss */
+.tutoriel .tutoPhoto {
+  position: absolute;
+  right: 20px;
+  bottom: 200px;
+  text-align: right;
+}
+/* line 271, _layout.scss */
+.tutoriel .tutoPhoto:after {
+  content: "";
+  position: absolute;
+  top: 110%;
+  right: 0px;
+  width: 50px;
+  height: 130px;
+  background: url("../img/arrow.png") no-repeat;
+  background-size: 100% 100%;
+  -webkit-transform: rotateZ(-10deg);
+  -moz-transform: rotateZ(-10deg);
+  -ms-transform: rotateZ(-10deg);
+  -o-transform: rotateZ(-10deg);
+  transform: rotateZ(-10deg);
+}
+/* line 283, _layout.scss */
+.tutoriel .tutoSearch {
+  position: absolute;
+  left: 20px;
+  bottom: 110px;
+}
+/* line 288, _layout.scss */
+.tutoriel .tutoSearch:after {
+  content: "";
+  position: absolute;
+  top: 110%;
+  left: 20%;
+  width: 25px;
+  height: 50px;
+  background: url("../img/arrow.png") no-repeat;
+  background-size: cover;
+  -webkit-transform: rotateZ(-5deg);
+  -moz-transform: rotateZ(-5deg);
+  -ms-transform: rotateZ(-5deg);
+  -o-transform: rotateZ(-5deg);
+  transform: rotateZ(-5deg);
+}
+
+/* line 302, _layout.scss */
+section.view {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #f4f5f6;
+}
+
+/* line 311, _layout.scss */
+.picsFixe {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* line 319, _layout.scss */
+.picsContainer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+/* line 327, _layout.scss */
+.pics {
+  position: relative;
+  display: inline-block;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/maroc.jpg");
+  background-position: center;
+  background-size: cover;
+}
+/* line 338, _layout.scss */
+.pics .comment {
+  position: relative;
+  width: 85%;
+  margin: 0;
+}
+/* line 343, _layout.scss */
+.pics .comment, .pics h2, .pics h3 {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+/* line 347, _layout.scss */
+.pics h2, .pics h3 {
+  margin-top: 5px;
+}
+/* line 350, _layout.scss */
+.pics h3 {
+  display: inline-block;
+}
+/* line 353, _layout.scss */
+.pics .likes {
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  margin-top: 10px;
+}
+/* line 359, _layout.scss */
+.pics .likes span {
+  vertical-align: middle;
+}
+/* line 363, _layout.scss */
+.pics .heart {
+  width: 22px;
+  height: 20px;
+  display: inline-block;
+  background: url("../img/heart.png") no-repeat;
+  background-size: cover;
+}
+
+/************************************************************************/
+/*  connexion
+/************************************************************************/
+/* line 4, _connexion.scss */
+#connexion {
+  -webkit-overflow-scrolling: touch;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #f4f5f6;
+}
+/* line 11, _connexion.scss */
+#connexion .pics {
+  position: relative;
+  max-height: 50%;
+}
+/* line 15, _connexion.scss */
+#connexion .pics h2, #connexion .pics h3 {
+  display: block;
+  margin: 0;
+}
+/* line 19, _connexion.scss */
+#connexion .pics h2 {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+/* line 23, _connexion.scss */
+#connexion .pics h3 {
+  text-align: right;
+  margin-right: 10px;
+  margin-top: -20px;
+}
+/* line 30, _connexion.scss */
+#connexion .onglet {
+  position: relative;
+  height: 65px;
+  margin-top: -65px;
+}
+/* line 35, _connexion.scss */
+#connexion .onglet span {
+  background: #6a72f0;
+  padding: 10px 30px;
+  position: absolute;
+  bottom: 0;
+  font-size: 18px;
+}
+/* line 42, _connexion.scss */
+#connexion .onglet span:first-child {
+  border-top-right-radius: 15px;
+  left: 0;
+}
+/* line 46, _connexion.scss */
+#connexion .onglet span:nth-child(2) {
+  border-top-left-radius: 15px;
+  right: 0;
+}
+/* line 51, _connexion.scss */
+#connexion .onglet .line {
+  background: #434897;
+  width: 100%;
+  height: 5%;
+  position: absolute;
+  bottom: 0;
+}
+/* line 61, _connexion.scss */
+#connexion .form {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  color: #434897;
+}
+/* line 67, _connexion.scss */
+#connexion .form h4 {
+  color: #434897;
+  font-weight: 600;
+  text-align: center;
+  font-size: 18px;
+  margin: 20px 0px 30px 0px;
+}
+/* line 75, _connexion.scss */
+#connexion .form label {
+  display: block;
+  text-align: center;
+}
+/* line 79, _connexion.scss */
+#connexion .form input {
+  width: 60%;
+  color: #434897;
+}
+/* line 83, _connexion.scss */
+#connexion .form input[type=text] {
+  background: #fff;
+}
+/* line 86, _connexion.scss */
+#connexion .form p {
+  text-align: center;
+  margin-top: 20px;
+  padding: 0px 50px;
+  line-height: 1.3;
+}

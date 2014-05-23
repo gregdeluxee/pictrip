@@ -1,0 +1,46 @@
+<div id="connexion">
+    <div class="pics">
+        <h2>Maroc</h2>
+        <h3>Volubilis</h3>
+    </div>
+    <div class="onglet">
+        <span id="inscriptionTab" hm-tap="connexion=0">Inscription</span>
+        <span id="connexionTab" hm-tap="connexion=1">Connexion</span>
+        <div class="line"></div>
+    </div>
+    <div class="form">
+        <div class="inscription" ng-hide="connexion">
+            <h4>Inscris toi et explore le monde !</h4>
+            <form id="inscriptionForm" ng-submit="inscription()">
+                <label>
+                    <input type="text" ng-model="inscriptionData.pseudo" placeholder="Pseudo">
+                </label>
+                <label>
+                    <input type="email" ng-model="inscriptionData.email" placeholder="Mail">
+                </label>
+                <label>
+                    <input type="password" ng-model="inscriptionData.password" placeholder="Mot de passe">
+                </label>
+                <label>
+                    <input type="submit" value="Inscription">
+                </label>
+            </form>
+            <p>En vous inscrivant, vous confirmez avoir lu et accepter <a href="#">les condition d’utilisation</a></p>
+        </div>
+        <div class="connexion" ng-show="connexion">
+            <h4>Connecte toi et explore le monde !</h4>
+            <form id="connexionForm" ng-submit="connect()">
+                <label>
+                    <input type="text" ng-model="connectData.pseudo" placeholder="Pseudo">
+                </label>
+                <label>
+                    <input type="password" ng-model="connectData.password" placeholder="Mot de passe">
+                </label>
+                <label>
+                    <input type="submit" value="Connexion">
+                </label>
+            </form>
+            <p><a href="#">Pseudo ou mot de passe oublié ?</a></p>
+        </div>
+    </div>
+</div><!-- End connexion -->
