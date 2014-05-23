@@ -457,7 +457,7 @@ section.view {
   background: #f4f5f6;
 }
 
-/* line 311, _layout.scss */
+/* line 312, _layout.scss */
 .picsFixe {
   position: absolute;
   top: 0;
@@ -467,7 +467,7 @@ section.view {
   overflow: hidden;
 }
 
-/* line 319, _layout.scss */
+/* line 320, _layout.scss */
 .picsContainer {
   position: absolute;
   top: 0;
@@ -480,7 +480,7 @@ section.view {
   transition-duration: 0.5s;
 }
 
-/* line 327, _layout.scss */
+/* line 328, _layout.scss */
 .pics {
   position: relative;
   display: inline-block;
@@ -491,37 +491,37 @@ section.view {
   background-position: center;
   background-size: cover;
 }
-/* line 338, _layout.scss */
+/* line 339, _layout.scss */
 .pics .comment {
   position: relative;
   width: 85%;
   margin: 0;
 }
-/* line 343, _layout.scss */
+/* line 344, _layout.scss */
 .pics .comment, .pics h2, .pics h3 {
   margin-left: 10px;
   margin-top: 10px;
 }
-/* line 347, _layout.scss */
+/* line 348, _layout.scss */
 .pics h2, .pics h3 {
   margin-top: 5px;
 }
-/* line 350, _layout.scss */
+/* line 351, _layout.scss */
 .pics h3 {
   display: inline-block;
 }
-/* line 353, _layout.scss */
+/* line 354, _layout.scss */
 .pics .likes {
   display: inline-block;
   position: absolute;
   right: 10px;
   margin-top: 10px;
 }
-/* line 359, _layout.scss */
+/* line 360, _layout.scss */
 .pics .likes span {
   vertical-align: middle;
 }
-/* line 363, _layout.scss */
+/* line 364, _layout.scss */
 .pics .heart {
   width: 22px;
   height: 20px;
