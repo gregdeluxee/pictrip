@@ -1,5 +1,5 @@
 
 
 app.controller('ExplorerController', ['$scope', function ($scope) {
-	// body...
+	$rootScope.hideNav = 0;
 }]);

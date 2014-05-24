@@ -1,0 +1,54 @@
+.picsFixe{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.picsContainer{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    @include transition-duration(.5s);
+}
+.pics{
+    position: relative;
+    display: inline-block;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/maroc.jpg");
+    background-position: center;
+    background-size: cover;
+
+
+    .comment{
+        position: relative;
+        width: 85%;
+        margin: 0;
+    }
+    .comment, h2, h3{
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    h2, h3{
+        margin-top: 5px;
+    }
+    h3{
+        display: inline-block;
+    }
+    .likes{
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+        margin-top: 10px;
+    
+        span{
+            vertical-align: middle;
+        }
+    }
+    
+}

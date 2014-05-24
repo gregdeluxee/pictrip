@@ -1,0 +1,68 @@
+
+.tutoriel{
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    p{
+        font-weight: 700;
+        font-size: 1.5em;
+        color: $blue;
+        width: 60%;
+    }
+    .tutoFav{
+        position: absolute;
+        right: 20px;
+        top: 40%;
+        text-align: right;
+
+        &:after{
+            content:"";
+            position: absolute;
+            bottom: 110%;
+            right: 0px;
+            width: 50px;
+            height: 100px;
+            background: url("../img/arrow.png") no-repeat;
+            background-size: cover;
+            @include transform(rotateZ(190deg));
+        }
+    }
+    .tutoPhoto{
+        position: absolute;
+        right: 20px;
+        bottom: 200px;
+        text-align: right;
+
+        &:after{
+            content:"";
+            position: absolute;
+            top: 110%;
+            right: 0px;
+            width: 50px;
+            height: 130px;
+            background: url("../img/arrow.png") no-repeat;
+            background-size: 100% 100%;
+            @include transform(rotateZ(-10deg));
+        }
+    }
+    .tutoSearch{
+        position: absolute;
+        left: 40px;
+        bottom: 110px;
+
+        &:after{
+            content:"";
+            position: absolute;
+            top: 110%;
+            left: 55%;
+            width: 25px;
+            height: 50px;
+            background: url("../img/arrow.png") no-repeat;
+            background-size: cover;
+            @include transform(rotateZ(-5deg));
+        }
+    }
+}

@@ -1,0 +1,74 @@
+#profilPage{
+
+	.profilNav{
+		position: absolute;
+		width: 100%;
+		bottom: 46px;
+		background: $darkBlue;
+
+		span{
+			position: relative;
+			display: inline-block;
+			width: 33%;
+			height: 32px;
+			text-align: center;
+			vertical-align: middle;
+			padding: 10px;
+
+			.heart{
+				margin-top: -3px;
+			}
+		}
+
+		.active{
+			background: $midBlue;
+		}
+	}
+
+	.profil{
+		text-align: center;
+		#profilPhoto{
+			position: relative;
+	        display: inline-block;
+	        vertical-align: middle;
+	        margin-top: 20px;
+	        width: 200px;
+	        height: 200px;
+	        border: 2px solid $darkBlue;
+	        border-radius: 100px;
+	        background-image: url("../img/maroc.jpg");
+	        background-position: center;
+	        background-repeat: no-repeat;
+		}
+
+		h1{
+			color: $darkBlue;
+			font-size: 36px;
+			margin-top: 20px;
+		}
+		.place{
+			position: relative;
+			display: inline-block;
+			color: $darkBlue;
+			font-size: 18px;
+			margin-top: 20px;
+
+			&:before{
+				content: "";
+				position: absolute;
+				left: -25px;
+				top: -2px;
+			    width: 16px;
+			    height: 23px;
+			    display: inline-block;
+			    background: url("../img/localise_blue.png") no-repeat;
+			    background-size: cover;
+			}
+		}
+		.description{
+			color: $darkBlue;
+			font-size: 16px;
+			margin-top: 40px;
+		}
+	}
+}

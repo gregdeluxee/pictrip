@@ -67,6 +67,41 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/OpenSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/OpenSans-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/OpenSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url("../fonts/OpenSans-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
 /************************************************************************/
 /*	Colors Vars                                                          
 /************************************************************************/
@@ -85,44 +120,61 @@ body {
 }
 
 /* line 12, _layout.scss */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+/* line 17, _layout.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 21, _layout.scss */
+.clearfix {
+  *zoom: 1;
+}
+
+/* line 25, _layout.scss */
 .hidden {
   display: none;
 }
 
-/* line 13, _layout.scss */
+/* line 26, _layout.scss */
 .overflowHidden {
   overflow: hidden;
 }
 
-/* line 14, _layout.scss */
+/* line 27, _layout.scss */
 h1, h2, h3 {
   margin: 0;
 }
 
-/* line 16, _layout.scss */
+/* line 29, _layout.scss */
 h2 {
   font-size: 36px;
 }
 
-/* line 19, _layout.scss */
+/* line 32, _layout.scss */
 h3 {
   font-size: 18px;
 }
 
-/* line 22, _layout.scss */
+/* line 35, _layout.scss */
 a {
   text-decoration: none;
   color: #6a72f0;
 }
 
-/* line 27, _layout.scss */
+/* line 40, _layout.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 29, _layout.scss */
+/* line 42, _layout.scss */
 .left {
   -webkit-transform: translate3D(-100%, 0, 0);
   -moz-transform: translate3D(-100%, 0, 0);
@@ -131,7 +183,7 @@ a {
   transform: translate3D(-100%, 0, 0);
 }
 
-/* line 30, _layout.scss */
+/* line 43, _layout.scss */
 .center {
   -webkit-transform: translate3D(0, 0, 0);
   -moz-transform: translate3D(0, 0, 0);
@@ -140,7 +192,7 @@ a {
   transform: translate3D(0, 0, 0);
 }
 
-/* line 31, _layout.scss */
+/* line 44, _layout.scss */
 .right {
   -webkit-transform: translate3D(100%, 0, 0);
   -moz-transform: translate3D(100%, 0, 0);
@@ -149,8 +201,13 @@ a {
   transform: translate3D(100%, 0, 0);
 }
 
-/* line 33, _layout.scss */
-input[type=text], input[type=password], input[type=email] {
+/* line 45, _layout.scss */
+input {
+  color: #434897;
+}
+
+/* line 48, _layout.scss */
+input[type=text], input[type=password], input[type=email], textarea {
   width: 100%;
   background: white;
   border: none;
@@ -161,28 +218,33 @@ input[type=text], input[type=password], input[type=email] {
   text-align: center;
 }
 
-/* line 43, _layout.scss */
-input[type=submit] {
+/* line 58, _layout.scss */
+input[type=submit], .submit {
   background: #d6d7f0;
-  box-sizing: content-box;
   border: none;
   border-radius: 50px;
   padding: 8px 10px;
-  color: #fff;
+  text-align: center;
 }
 
-/* line 51, _layout.scss */
+/* line 65, _layout.scss */
 ::-webkit-input-placeholder {
   /* WebKit browsers */
   color: #434897;
 }
 
-/* line 54, _layout.scss */
-input:focus {
+/* line 68, _layout.scss */
+input:focus, textarea:focus {
   outline: none !important;
 }
 
-/* line 59, _layout.scss */
+/* line 71, _layout.scss */
+input[type=file] {
+  position: absolute;
+  left: -9999px;
+}
+
+/* line 75, _layout.scss */
 .loader {
   position: absolute;
   width: 100%;
@@ -192,25 +254,133 @@ input:focus {
   background: url("../img/loader.gif") no-repeat center center, rgba(0, 0, 0, 0.6);
 }
 
-/* line 69, _layout.scss */
+/* line 84, _layout.scss */
+.heart {
+  width: 22px !important;
+  height: 20px !important;
+  display: inline-block;
+  background: url("../img/heart.png") no-repeat;
+  background-size: cover;
+}
+
+/* line 92, _layout.scss */
 .leftSwipe {
   position: absolute;
   width: 10%;
   height: 100%;
 }
 
-/* line 75, _layout.scss */
+/* line 99, _layout.scss */
+section.view {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #f4f5f6;
+}
+
+/* line 109, _layout.scss */
+.optionSection .head {
+  background: #434897;
+  position: relative;
+  width: 100%;
+  color: #fff;
+  padding: 5px 10px;
+}
+/* line 116, _layout.scss */
+.optionSection .head h1 {
+  font-size: 24px;
+  display: inline-block;
+}
+/* line 120, _layout.scss */
+.optionSection .head a {
+  color: #fff;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+/* line 131, _layout.scss */
+.optionSection h2 {
+  position: relative;
+  background: #6a72f0;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 10px;
+}
+/* line 138, _layout.scss */
+.optionSection h2 span {
+  font-size: 12px;
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+}
+/* line 145, _layout.scss */
+.optionSection .optionForm {
+  text-align: right;
+  padding: 10px 10px;
+  background: #f4f5f6;
+}
+/* line 150, _layout.scss */
+.optionSection .optionForm a {
+  display: inline-block;
+  color: #434897;
+  padding: 10px;
+  width: 60%;
+}
+/* line 157, _layout.scss */
+.optionSection label {
+  font-size: 14px;
+  color: #333;
+  margin-right: 10px;
+}
+/* line 162, _layout.scss */
+.optionSection input, .optionSection textarea {
+  text-align: left;
+  width: 60%;
+  max-width: 60%;
+  vertical-align: middle;
+}
+/* line 168, _layout.scss */
+.optionSection input[type=checkbox], .optionSection textarea[type=checkbox] {
+  width: initial;
+  margin-right: 30px;
+}
+/* line 173, _layout.scss */
+.optionSection p {
+  color: #434897;
+  text-align: left;
+}
+/* line 177, _layout.scss */
+.optionSection #profilPhoto {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20px;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #434897;
+  border-radius: 50px;
+  background-image: url("../img/maroc.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* line 1, _nav.scss */
 #nav {
   position: absolute;
   z-index: 5000;
   bottom: 0;
   background: rgba(0, 0, 0, 0.2);
   width: 100%;
+  height: 46px;
   border-top: solid 2px #434897;
   overflow: hidden;
   *zoom: 1;
 }
-/* line 85, _layout.scss */
+/* line 12, _nav.scss */
 #nav a#menuButton {
   display: inline-block;
   border: none;
@@ -220,7 +390,7 @@ input:focus {
   padding: 0;
   vertical-align: middle;
 }
-/* line 95, _layout.scss */
+/* line 22, _nav.scss */
 #nav a#menuButton span {
   position: relative;
   display: block;
@@ -229,11 +399,11 @@ input:focus {
   margin-bottom: 6px;
   background: #fff;
 }
-/* line 103, _layout.scss */
+/* line 30, _nav.scss */
 #nav a#menuButton span:last-child {
   margin-bottom: 0;
 }
-/* line 108, _layout.scss */
+/* line 35, _nav.scss */
 #nav .center {
   position: absolute;
   width: 70%;
@@ -243,7 +413,7 @@ input:focus {
   margin: auto;
   text-align: center;
 }
-/* line 118, _layout.scss */
+/* line 45, _nav.scss */
 #nav form {
   display: inline-block;
   margin: 0 auto;
@@ -251,7 +421,7 @@ input:focus {
   position: relative;
   width: 80%;
 }
-/* line 125, _layout.scss */
+/* line 52, _nav.scss */
 #nav form input[type=text] {
   width: 100%;
   background: rgba(0, 0, 0, 0.2);
@@ -262,12 +432,12 @@ input:focus {
   color: #fff;
   text-align: center;
 }
-/* line 136, _layout.scss */
+/* line 63, _nav.scss */
 #nav form input[type=text]::-webkit-input-placeholder {
   /* WebKit browsers */
   color: #fff;
 }
-/* line 140, _layout.scss */
+/* line 67, _nav.scss */
 #nav form input[type=submit] {
   display: none;
   background: rgba(255, 255, 255, 0.2);
@@ -276,16 +446,16 @@ input:focus {
   padding: 4px 5px;
   color: #fff;
 }
-/* line 149, _layout.scss */
+/* line 76, _nav.scss */
 #nav form input[type=text].search {
   width: 70%;
 }
-/* line 152, _layout.scss */
+/* line 79, _nav.scss */
 #nav form input[type=submit].search {
   display: inline-block;
 }
 
-/* line 158, _layout.scss */
+/* line 85, _nav.scss */
 a#takePic {
   position: absolute;
   top: 9px;
@@ -299,7 +469,7 @@ a#takePic {
   vertical-align: middle;
 }
 
-/* line 171, _layout.scss */
+/* line 98, _nav.scss */
 #localiseMe {
   position: relative;
   text-indent: -99999px;
@@ -311,7 +481,7 @@ a#takePic {
   vertical-align: middle;
 }
 
-/* line 182, _layout.scss */
+/* line 109, _nav.scss */
 #menu {
   z-index: 5000;
   position: absolute;
@@ -323,7 +493,7 @@ a#takePic {
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
 }
-/* line 190, _layout.scss */
+/* line 117, _nav.scss */
 #menu a#menuButtonOn {
   position: absolute;
   display: inline-block;
@@ -336,7 +506,7 @@ a#takePic {
   padding: 0;
   vertical-align: middle;
 }
-/* line 203, _layout.scss */
+/* line 130, _nav.scss */
 #menu a#menuButtonOn span {
   position: relative;
   display: block;
@@ -345,189 +515,22 @@ a#takePic {
   margin-bottom: 6px;
   background: #434897;
 }
-/* line 211, _layout.scss */
+/* line 138, _nav.scss */
 #menu a#menuButtonOn span:last-child {
   margin-bottom: 0;
 }
-/* line 217, _layout.scss */
+/* line 144, _nav.scss */
 #menu ul {
   position: relative;
   top: 35%;
   line-height: 0;
   text-align: center;
 }
-/* line 225, _layout.scss */
+/* line 152, _nav.scss */
 #menu ul li a {
   font-size: 36px;
   line-height: 1.5;
   color: #fff;
-}
-
-/* line 234, _layout.scss */
-.tutoriel {
-  display: none;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-/* line 241, _layout.scss */
-.tutoriel p {
-  font-weight: 700;
-  font-size: 1.5em;
-  color: #d6d7f0;
-  width: 60%;
-}
-/* line 247, _layout.scss */
-.tutoriel .tutoFav {
-  position: absolute;
-  right: 20px;
-  top: 40%;
-  text-align: right;
-}
-/* line 253, _layout.scss */
-.tutoriel .tutoFav:after {
-  content: "";
-  position: absolute;
-  bottom: 110%;
-  right: 0px;
-  width: 50px;
-  height: 100px;
-  background: url("../img/arrow.png") no-repeat;
-  background-size: cover;
-  -webkit-transform: rotateZ(190deg);
-  -moz-transform: rotateZ(190deg);
-  -ms-transform: rotateZ(190deg);
-  -o-transform: rotateZ(190deg);
-  transform: rotateZ(190deg);
-}
-/* line 265, _layout.scss */
-.tutoriel .tutoPhoto {
-  position: absolute;
-  right: 20px;
-  bottom: 200px;
-  text-align: right;
-}
-/* line 271, _layout.scss */
-.tutoriel .tutoPhoto:after {
-  content: "";
-  position: absolute;
-  top: 110%;
-  right: 0px;
-  width: 50px;
-  height: 130px;
-  background: url("../img/arrow.png") no-repeat;
-  background-size: 100% 100%;
-  -webkit-transform: rotateZ(-10deg);
-  -moz-transform: rotateZ(-10deg);
-  -ms-transform: rotateZ(-10deg);
-  -o-transform: rotateZ(-10deg);
-  transform: rotateZ(-10deg);
-}
-/* line 283, _layout.scss */
-.tutoriel .tutoSearch {
-  position: absolute;
-  left: 20px;
-  bottom: 110px;
-}
-/* line 288, _layout.scss */
-.tutoriel .tutoSearch:after {
-  content: "";
-  position: absolute;
-  top: 110%;
-  left: 20%;
-  width: 25px;
-  height: 50px;
-  background: url("../img/arrow.png") no-repeat;
-  background-size: cover;
-  -webkit-transform: rotateZ(-5deg);
-  -moz-transform: rotateZ(-5deg);
-  -ms-transform: rotateZ(-5deg);
-  -o-transform: rotateZ(-5deg);
-  transform: rotateZ(-5deg);
-}
-
-/* line 302, _layout.scss */
-section.view {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  background: #f4f5f6;
-}
-
-/* line 312, _layout.scss */
-.picsFixe {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-}
-
-/* line 320, _layout.scss */
-.picsContainer {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
-}
-
-/* line 328, _layout.scss */
-.pics {
-  position: relative;
-  display: inline-block;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("../img/maroc.jpg");
-  background-position: center;
-  background-size: cover;
-}
-/* line 339, _layout.scss */
-.pics .comment {
-  position: relative;
-  width: 85%;
-  margin: 0;
-}
-/* line 344, _layout.scss */
-.pics .comment, .pics h2, .pics h3 {
-  margin-left: 10px;
-  margin-top: 10px;
-}
-/* line 348, _layout.scss */
-.pics h2, .pics h3 {
-  margin-top: 5px;
-}
-/* line 351, _layout.scss */
-.pics h3 {
-  display: inline-block;
-}
-/* line 354, _layout.scss */
-.pics .likes {
-  display: inline-block;
-  position: absolute;
-  right: 10px;
-  margin-top: 10px;
-}
-/* line 360, _layout.scss */
-.pics .likes span {
-  vertical-align: middle;
-}
-/* line 364, _layout.scss */
-.pics .heart {
-  width: 22px;
-  height: 20px;
-  display: inline-block;
-  background: url("../img/heart.png") no-repeat;
-  background-size: cover;
 }
 
 /************************************************************************/
@@ -617,16 +620,240 @@ section.view {
 /* line 79, _connexion.scss */
 #connexion .form input {
   width: 60%;
-  color: #434897;
 }
-/* line 83, _connexion.scss */
+/* line 82, _connexion.scss */
 #connexion .form input[type=text] {
   background: #fff;
 }
-/* line 86, _connexion.scss */
+/* line 85, _connexion.scss */
 #connexion .form p {
   text-align: center;
   margin-top: 20px;
   padding: 0px 50px;
   line-height: 1.3;
+}
+
+/* line 1, _home.scss */
+.picsFixe {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* line 9, _home.scss */
+.picsContainer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+/* line 17, _home.scss */
+.pics {
+  position: relative;
+  display: inline-block;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/maroc.jpg");
+  background-position: center;
+  background-size: cover;
+}
+/* line 28, _home.scss */
+.pics .comment {
+  position: relative;
+  width: 85%;
+  margin: 0;
+}
+/* line 33, _home.scss */
+.pics .comment, .pics h2, .pics h3 {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+/* line 37, _home.scss */
+.pics h2, .pics h3 {
+  margin-top: 5px;
+}
+/* line 40, _home.scss */
+.pics h3 {
+  display: inline-block;
+}
+/* line 43, _home.scss */
+.pics .likes {
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  margin-top: 10px;
+}
+/* line 49, _home.scss */
+.pics .likes span {
+  vertical-align: middle;
+}
+
+/* line 2, _tutoriel.scss */
+.tutoriel {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+/* line 9, _tutoriel.scss */
+.tutoriel p {
+  font-weight: 700;
+  font-size: 1.5em;
+  color: #d6d7f0;
+  width: 60%;
+}
+/* line 15, _tutoriel.scss */
+.tutoriel .tutoFav {
+  position: absolute;
+  right: 20px;
+  top: 40%;
+  text-align: right;
+}
+/* line 21, _tutoriel.scss */
+.tutoriel .tutoFav:after {
+  content: "";
+  position: absolute;
+  bottom: 110%;
+  right: 0px;
+  width: 50px;
+  height: 100px;
+  background: url("../img/arrow.png") no-repeat;
+  background-size: cover;
+  -webkit-transform: rotateZ(190deg);
+  -moz-transform: rotateZ(190deg);
+  -ms-transform: rotateZ(190deg);
+  -o-transform: rotateZ(190deg);
+  transform: rotateZ(190deg);
+}
+/* line 33, _tutoriel.scss */
+.tutoriel .tutoPhoto {
+  position: absolute;
+  right: 20px;
+  bottom: 200px;
+  text-align: right;
+}
+/* line 39, _tutoriel.scss */
+.tutoriel .tutoPhoto:after {
+  content: "";
+  position: absolute;
+  top: 110%;
+  right: 0px;
+  width: 50px;
+  height: 130px;
+  background: url("../img/arrow.png") no-repeat;
+  background-size: 100% 100%;
+  -webkit-transform: rotateZ(-10deg);
+  -moz-transform: rotateZ(-10deg);
+  -ms-transform: rotateZ(-10deg);
+  -o-transform: rotateZ(-10deg);
+  transform: rotateZ(-10deg);
+}
+/* line 51, _tutoriel.scss */
+.tutoriel .tutoSearch {
+  position: absolute;
+  left: 40px;
+  bottom: 110px;
+}
+/* line 56, _tutoriel.scss */
+.tutoriel .tutoSearch:after {
+  content: "";
+  position: absolute;
+  top: 110%;
+  left: 55%;
+  width: 25px;
+  height: 50px;
+  background: url("../img/arrow.png") no-repeat;
+  background-size: cover;
+  -webkit-transform: rotateZ(-5deg);
+  -moz-transform: rotateZ(-5deg);
+  -ms-transform: rotateZ(-5deg);
+  -o-transform: rotateZ(-5deg);
+  transform: rotateZ(-5deg);
+}
+
+/* line 3, _profil.scss */
+#profilPage .profilNav {
+  position: absolute;
+  width: 100%;
+  bottom: 46px;
+  background: #434897;
+}
+/* line 9, _profil.scss */
+#profilPage .profilNav span {
+  position: relative;
+  display: inline-block;
+  width: 33%;
+  height: 32px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+}
+/* line 18, _profil.scss */
+#profilPage .profilNav span .heart {
+  margin-top: -3px;
+}
+/* line 23, _profil.scss */
+#profilPage .profilNav .active {
+  background: #6a72f0;
+}
+/* line 28, _profil.scss */
+#profilPage .profil {
+  text-align: center;
+}
+/* line 30, _profil.scss */
+#profilPage .profil #profilPhoto {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: 20px;
+  width: 200px;
+  height: 200px;
+  border: 2px solid #434897;
+  border-radius: 100px;
+  background-image: url("../img/maroc.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* line 44, _profil.scss */
+#profilPage .profil h1 {
+  color: #434897;
+  font-size: 36px;
+  margin-top: 20px;
+}
+/* line 49, _profil.scss */
+#profilPage .profil .place {
+  position: relative;
+  display: inline-block;
+  color: #434897;
+  font-size: 18px;
+  margin-top: 20px;
+}
+/* line 56, _profil.scss */
+#profilPage .profil .place:before {
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: -2px;
+  width: 16px;
+  height: 23px;
+  display: inline-block;
+  background: url("../img/localise_blue.png") no-repeat;
+  background-size: cover;
+}
+/* line 68, _profil.scss */
+#profilPage .profil .description {
+  color: #434897;
+  font-size: 16px;
+  margin-top: 40px;
 }

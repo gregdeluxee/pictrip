@@ -41,13 +41,17 @@ app.controller('ConnexionController', ['$scope', '$rootScope', '$http', '$locati
 
 	connectSuccess = function(response){
 		$rootScope.loader = 0;
-		if (response['status'] == "connected") {
+		if (response['status'] == "connected") 
+		{
 			window.localStorage.setItem("pictripLogged", "true")
 			window.localStorage.setItem("pictripLogin", response['pseudo']);
 			window.pictripLogged = true;
 			window.pictripLogin = response['pseudo'];
 			$location.path('/');
-		};
+		}else if (response['status'] == "emailnotchecked") 
+		{
+			alert ("Avant de pouvoir vous connecter, vérifiez vos mails et confirmer votre inscription !");
+		}
 	}
 	connectError = function(){
 		$rootScope.loader = 0;
@@ -64,7 +68,8 @@ app.controller('ConnexionController', ['$scope', '$rootScope', '$http', '$locati
 		$pseudo = $scope.inscriptionData.pseudo;
 		$email = $scope.inscriptionData.email;
 		$password = $scope.inscriptionData.password;
-		if (angular.isUndefined($password)) {
+		if (angular.isUndefined($password)) 
+		{
 			$rootScope.loader = 0;
 			alert("Vous devez fournir un mot de passe");
 			return false;
@@ -85,7 +90,8 @@ app.controller('ConnexionController', ['$scope', '$rootScope', '$http', '$locati
 
 	inscriptiontSuccess = function(response){
 		$rootScope.loader = 0;
-		if (response['status'] == "registred") {
+		if (response['status'] == "registred") 
+		{
 			window.localStorage.setItem("pictripLogged", "true")
 			window.localStorage.setItem("pictripLogin", response['pseudo']);
 			window.pictripLogged = true;
