@@ -26,7 +26,7 @@
                     <span></span>
                 </a>
                 <div class="center">
-                    <a href="#" id="localiseMe">Me localiser</a>
+                    <a href="#" id="localiseMe">{{lang.["Locate me"]}}</a>
                 <!--
                     <form ng-click="searchFocus()">
                         <input class="" type="text" placeholder="Cherche un endroit">
@@ -34,7 +34,7 @@
                     </form>
                 -->
                 </div>
-                <a href="#" id="takePic" hm-tap="takePicture()">Prendre une photo</a>
+                <a href="#/addpic" id="takePic">{{lang["Take a picture"]}}</a>
             </nav>
 
             <div id="menu" ng-class="{left: menuOpenf()==0, center: menuOpenf()==1}" hm-swipeleft="menuOpenOff()" hm-options="{swipeVelocityX: 0.1, prevent_default: true}">
@@ -44,11 +44,12 @@
                     <span></span>
                 </a>
                 <ul>
-                    <li><a hm-tap="menuOpenOff()" href="#/">Accueil</a></li>
-                    <li><a hm-tap="menuOpenOff()" href="#/explorer">Explorer</a></li>
-                    <li><a hm-tap="menuOpenOff()" href="#/moi">Moi</a></li>
-                    <li><a hm-tap="menuOpenOff()" href="#/preference">Préférences</a></li>
-                    <li><a hm-tap="menuOpenOff()" href="#/">Tutoriel</a></li>
+                    <li><a hm-tap="menuOpenOff()" href="#/">{{lang.Home}}</a></li>
+                    <li><a hm-tap="menuOpenOff()" href="#/explorer">{{lang.Explore}}</a></li>
+                    <li><a hm-tap="menuOpenOff()" href="#/moi">{{lang.Me}}</a></li>
+                    <li><a hm-tap="menuOpenOff()" href="#/preference">{{lang.Preferences}}</a></li>
+                    <li><a hm-tap="menuOpenOff()" href="#/">{{lang.Tutorial}}</a></li>
+                    <li><a hm-tap="menuOpenOff()" href="#/test">test</a></li>
                 </ul>
             </div><!-- End menu -->
 
@@ -79,6 +80,11 @@
         <script type="text/javascript" src="js/controller/ExplorerController.js"></script>
         <script type="text/javascript" src="js/controller/ProfilController.js"></script>
         <script type="text/javascript" src="js/controller/PreferenceController.js"></script>
+        <script type="text/javascript" src="js/controller/AddpicController.js"></script>
+        <script type="text/javascript" src="js/controller/TestController.js"></script>
+
+        <script type="text/javascript" src="js/language/english.js"></script>
+        <script type="text/javascript" src="js/language/french.js"></script>
 
         <!--
         <script type="text/javascript" src="js/directive/hammer.directive.js"></script>

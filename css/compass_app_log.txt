@@ -1975,3 +1975,75 @@ Load paths:
 2014-05-24 06:53:16 overwrite ./style.css 
 2014-05-24 06:53:24 overwrite ./style.css 
 2014-05-24 06:53:33 overwrite ./style.css 
+2014-05-24 22:30:20 overwrite ./style.css 
+2014-05-24 22:42:44 overwrite ./style.css 
+2014-05-24 22:43:10 overwrite ./style.css 
+2014-05-24 22:44:03 overwrite ./style.css 
+2014-05-24 22:44:15 overwrite ./style.css 
+2014-05-25 03:32:34 overwrite ./style.css 
+2014-05-25 03:34:00 overwrite ./style.css 
+2014-05-25 03:34:00 identical ./style.css 
+2014-05-25 03:39:25 overwrite ./style.css 
+2014-05-25 03:39:25 identical ./style.css 
+2014-05-25 03:40:22 overwrite ./style.css 
+2014-05-25 03:40:22 identical ./style.css 
+2014-05-25 03:40:34 identical ./style.css 
+2014-05-25 03:40:34 identical ./style.css 
+2014-05-25 04:00:45 overwrite ./style.css 
+2014-05-25 04:00:45 identical ./style.css 
+2014-05-25 04:01:20     error style.scss (Line 17: File to import not found or unreadable: addpic.
+Load paths:
+  E:/wamp/www/apps/pictrip/www/css
+  E:/Bureau/compass.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  E:/Bureau/compass.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  E:/Bureau/compass.app/lib/ruby/compass_extensions/compass-960-plugin-0.10.4/stylesheets
+  E:/Bureau/compass.app/lib/ruby/compass_extensions/compass-h5bp-0.1.1/stylesheets
+  E:/Bureau/compass.app/lib/ruby/compass_extensions/compass-normalize-1.4.3/stylesheets
+  E:/Bureau/compass.app/lib/ruby/compass_extensions/bootstrap-sass-2.3.2.1/vendor/assets/stylesheets
+  E:/Bureau/compass.app/lib/ruby/compass_extensions/susy-1.0.9/sass
+  E:/Bureau/compass.app/lib/ruby/compass_extensions/zurb-foundation-4.3.1/scss
+  Compass::SpriteImporter
+  E:/Bureau/vendor/assets/stylesheets)
+2014-05-25 04:01:20 overwrite ./style.css 
+2014-05-25 04:01:20     error style.scss (Line 17: File to import not found or unreadable: addpic.
+Load paths:
+  E:/wamp/www/apps/pictrip/www/css
+  E:/Bureau/compass.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/blueprint/stylesheets
+  E:/Bureau/compass.app/lib/ruby/compass_0.12/compass-0.12.2/frameworks/compass/stylesheets
+  E:/Bureau/compass.app/lib/ruby/compass_extensions/compass-960-plugin-0.10.4/stylesheets
+  E:/Bureau/compass.app/lib/ruby/compass_extensions/compass-h5bp-0.1.1/stylesheets
+  E:/Bureau/compass.app/lib/ruby/compass_extensions/compass-normalize-1.4.3/stylesheets
+  E:/Bureau/compass.app/lib/ruby/compass_extensions/bootstrap-sass-2.3.2.1/vendor/assets/stylesheets
+  E:/Bureau/compass.app/lib/ruby/compass_extensions/susy-1.0.9/sass
+  E:/Bureau/compass.app/lib/ruby/compass_extensions/zurb-foundation-4.3.1/scss
+  Compass::SpriteImporter
+  E:/Bureau/vendor/assets/stylesheets)
+2014-05-25 04:01:20 identical ./style.css 
+2014-05-25 04:01:31 overwrite ./style.css 
+2014-05-25 04:01:56 overwrite ./style.css 
+2014-05-25 04:01:56 identical ./style.css 
+2014-05-25 04:02:12 overwrite ./style.css 
+2014-05-25 04:02:25 overwrite ./style.css 
+2014-05-25 04:03:53 overwrite ./style.css 
+2014-05-25 04:03:53 identical ./style.css 
+2014-05-25 04:04:07 overwrite ./style.css 
+2014-05-25 04:04:08 identical ./style.css 
+2014-05-25 04:04:14 overwrite ./style.css 
+2014-05-25 04:04:14 identical ./style.css 
+2014-05-25 04:05:27 overwrite ./style.css 
+2014-05-25 04:05:27 identical ./style.css 
+2014-05-25 04:06:30 overwrite ./style.css 
+2014-05-25 04:06:30 identical ./style.css 
+2014-05-25 04:12:07 overwrite ./style.css 
+2014-05-25 04:12:07 identical ./style.css 
+2014-05-25 04:12:20 overwrite ./style.css 
+2014-05-25 04:12:20 identical ./style.css 
+2014-05-25 04:13:20 overwrite ./style.css 
+2014-05-25 04:13:20 identical ./style.css 
+2014-05-25 04:14:13 overwrite ./style.css 
+2014-05-25 04:14:13 identical ./style.css 
+2014-05-25 04:15:16 overwrite ./style.css 
+2014-05-25 04:15:16 identical ./style.css 
+2014-05-25 04:16:35 overwrite ./style.css 
+2014-05-25 04:33:12 overwrite ./style.css 
+2014-05-25 04:33:12 identical ./style.css 

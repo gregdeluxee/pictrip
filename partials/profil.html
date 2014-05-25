@@ -1,22 +1,64 @@
 <div id="profilPage">
-	<div class="profil">
+	<div class="profil" hm-swipeleft="profilSwipeLeft()" hm-options="{swipeVelocityX: 0.1, prevent_default: true}" ng-class="{center: profil==1, left: profil==0}">
 		<div id="profilPhoto"></div>
 		<h1>Grégory Meis</h1>
 		<p class="place">Place</p>
 		<p class="description">Tell us about you !</p>
 	</div>
 
-	<div class="myPics">
-
+	<div class="myPics" hm-swiperight="myPicsSwipeRight()" hm-swipeleft="myPicsSwipeLeft()" hm-options="{swipeVelocityX: 0.1, prevent_default: true}" ng-class="{center: myPics==1, left: profil==0 && myFav==1, right: profil==1 && myFav==0}">
+		<div class="picsFixe">
+			<div class="picsContainer" style="-webkit-transform: translate3d(0, {{picsContainerPos}}%, 0)" hm-swipeup="nextPic()" hm-swipedown="prevPic()" hm-options="{swipeVelocityY: 0.1, prevent_default: true}">
+				<div class="pics">
+					<p class="comment">Si vous passez près de meknes, allez voir l’ancienne cité romaine volubilis, ça vaut le coup d’oeil ! Il y a une petite surprise haha</p>
+					<h2>Maroc</h2>
+					<h3>Mine</h3>
+					<div class="likes">
+						<span>234</span>
+						<span class="heart"></span>
+					</div>
+				</div>
+				<div class="pics">
+					<p class="comment">cité romaine volubilis, ça vaut le coup d’oeil ! Il y a une petite surprise haha</p>
+					<h2>Maroc</h2>
+					<h3>LOOOL</h3>
+					<div class="likes">
+						<span>234</span>
+						<span class="heart"></span>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
-	<div class="myFav">
-
+	<div class="myFav" hm-swiperight="myFavSwipeRight()" hm-options="{swipeVelocityX: 0.1, prevent_default: true}" ng-class="{center: myFav==1, right: myFav==0}">
+		<div class="picsFixe">
+			<div class="picsContainer" style="-webkit-transform: translate3d(0,{{picsContainerPos}}%,0)" hm-swipeup="nextPic()" hm-swipedown="prevPic()" hm-options="{swipeVelocityY: 0.1, prevent_default: true}">
+				<div class="pics">
+					<p class="comment">Si vous passez près de meknes, allez voir l’ancienne cité romaine volubilis, ça vaut le coup d’oeil ! Il y a une petite surprise haha</p>
+					<h2>Maroc</h2>
+					<h3>Fav</h3>
+					<div class="likes">
+						<span>234</span>
+						<span class="heart"></span>
+					</div>
+				</div>
+				<div class="pics">
+					<p class="comment">cité romaine volubilis, ça vaut le coup d’oeil ! Il y a une petite surprise haha</p>
+					<h2>Maroc</h2>
+					<h3>LOOOL</h3>
+					<div class="likes">
+						<span>234</span>
+						<span class="heart"></span>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 		
 	<div class="profilNav clearfix">
-		<span class="active">Moi</span><!-- 
-		--><span>Mes photos</span><!-- 
-		--><span><span class="heart"></span></span>
+		<span ng-class="{active: profil==1 && myPics==0 && myFav==0}" hm-tap="profilTap()">{{lang.Me}}</span><!-- 
+	 --><span ng-class="{active: myPics==1 && profil==0 && myFav==0}" hm-tap="myPicsTap()">{{lang["My pics"]}}</span><!-- 
+	 --><span ng-class="{active: myFav==1 && profil==0 && myPics==0}" hm-tap="myFavTap()"><span class="heart"></span></span>
 	</div>
 </div>

@@ -1,0 +1,31 @@
+#addPic{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-position: center;
+    background-size: cover;
+
+    form{
+        padding: 20px;
+
+        input, textarea{
+            text-align: left;
+            background: rgba(0,0,0,.3);
+            color: $lowBlue;
+            font-weight: 600;
+        }
+        input[type=submit]{
+            background: rgba(67,72,151,.3);
+            color: #fff;
+            text-align: center;
+        }
+        textarea{
+            height: 80px;
+        }
+        ::-webkit-input-placeholder { /* WebKit browsers */
+            color: $lowBlue;
+        }
+    }
+}

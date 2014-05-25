@@ -4,43 +4,43 @@
         <h3>Volubilis</h3>
     </div>
     <div class="onglet">
-        <span id="inscriptionTab" hm-tap="connexion=0">Inscription</span>
-        <span id="connexionTab" hm-tap="connexion=1">Connexion</span>
+        <span id="inscriptionTab" hm-tap="connexion=0">{{lang.Inscription}}</span>
+        <span id="connexionTab" hm-tap="connexion=1">{{lang.Connexion}}</span>
         <div class="line"></div>
     </div>
     <div class="form">
         <div class="inscription" ng-hide="connexion">
-            <h4>Inscris toi et explore le monde !</h4>
+            <h4>{{lang["Join now and explore the world"]}} !</h4>
             <form id="inscriptionForm" ng-submit="inscription()">
                 <label>
-                    <input type="text" ng-model="inscriptionData.pseudo" placeholder="Pseudo">
+                    <input type="text" ng-model="inscriptionData.pseudo" placeholder="{{lang.Pseudo}}">
                 </label>
                 <label>
-                    <input type="email" ng-model="inscriptionData.email" placeholder="Mail">
+                    <input type="email" ng-model="inscriptionData.email" placeholder="{{lang.Mail}}">
                 </label>
                 <label>
-                    <input type="password" ng-model="inscriptionData.password" placeholder="Mot de passe">
+                    <input type="password" ng-model="inscriptionData.password" placeholder="{{lang.Password}}">
                 </label>
                 <label>
-                    <input type="submit" value="Inscription">
+                    <input type="submit" value="{{lang.Inscription}}">
                 </label>
             </form>
-            <p>En vous inscrivant, vous confirmez avoir lu et accepter <a href="#">les condition d’utilisation</a></p>
+            <p>{{lang["By registering, you confirm that you have read and accept"]}} <a href="#">{{lang["The terms of use"].toLowerCase()}}</a></p>
         </div>
         <div class="connexion" ng-show="connexion">
-            <h4>Connecte toi et explore le monde !</h4>
+            <h4>{{lang["Log in and explore the world"]}} !</h4>
             <form id="connexionForm" ng-submit="connect()">
                 <label>
-                    <input type="text" ng-model="connectData.pseudo" placeholder="Pseudo">
+                    <input type="text" ng-model="connectData.pseudo" placeholder="{{lang.Pseudo}}">
                 </label>
                 <label>
-                    <input type="password" ng-model="connectData.password" placeholder="Mot de passe">
+                    <input type="password" ng-model="connectData.password" placeholder="{{lang.Password}}">
                 </label>
                 <label>
-                    <input type="submit" value="Connexion">
+                    <input type="submit" value="{{lang.Connexion}}">
                 </label>
             </form>
-            <p><a href="#">Pseudo ou mot de passe oublié ?</a></p>
+            <p><a href="#">{{lang["Forgotten password"]}} ?</a></p>
         </div>
     </div>
 </div><!-- End connexion -->

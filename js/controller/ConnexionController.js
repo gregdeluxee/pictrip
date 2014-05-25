@@ -3,7 +3,6 @@ app.controller('ConnexionController', ['$scope', '$rootScope', '$http', '$locati
 	
 	$rootScope.openMenu = 1;
 	$rootScope.hideNav = 1;
-	const salt = "sb/@0713";
 
 	$scope.connexion = 1;
 
@@ -43,8 +42,10 @@ app.controller('ConnexionController', ['$scope', '$rootScope', '$http', '$locati
 		$rootScope.loader = 0;
 		if (response['status'] == "connected") 
 		{
-			window.localStorage.setItem("pictripLogged", "true")
+			window.localStorage.setItem("pictripLogged", "true");
 			window.localStorage.setItem("pictripLogin", response['pseudo']);
+			window.localStorage.setItem("pictripToken", response['token']);
+			window.pictripToken = response['token'];
 			window.pictripLogged = true;
 			window.pictripLogin = response['pseudo'];
 			$location.path('/');
@@ -92,8 +93,10 @@ app.controller('ConnexionController', ['$scope', '$rootScope', '$http', '$locati
 		$rootScope.loader = 0;
 		if (response['status'] == "registred") 
 		{
-			window.localStorage.setItem("pictripLogged", "true")
+			window.localStorage.setItem("pictripLogged", "true");
 			window.localStorage.setItem("pictripLogin", response['pseudo']);
+			window.localStorage.setItem("pictripToken", response['token']);
+			window.pictripToken = response['token'];
 			window.pictripLogged = true;
 			window.pictripLogin = response['pseudo'];
 			$location.path('/');

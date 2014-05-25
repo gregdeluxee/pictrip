@@ -1,4 +1,9 @@
 body{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     padding: 0;
     margin: 0;
     color: #fff;
@@ -56,6 +61,7 @@ input[type=text],input[type=password],input[type=email], textarea{
     text-align: center;
 }
 input[type=submit], .submit{
+    width: 100%;
     background: $blue;
     border: none;
     border-radius: 50px;
@@ -77,6 +83,8 @@ input[type=file]{
     width: 100%;
     top: 0;
     bottom: 0;
+    left: 0;
+    right: 0;
     z-index: 6000;
     background: url("../img/loader.gif") no-repeat center center,
     rgba(0,0,0,.6);
@@ -185,6 +193,7 @@ section.view{
         border-radius: 50px;
         background-image: url("../img/maroc.jpg");
         background-position: center;
+        background-size: cover;
         background-repeat: no-repeat;
     }
         

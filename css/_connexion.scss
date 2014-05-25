@@ -30,7 +30,7 @@
     .onglet{
         position: relative;
         height: 65px;
-        margin-top: -65px;
+        margin-top: -62px;
 
         span{
             background: $midBlue;
@@ -51,7 +51,7 @@
         .line{
             background: $darkBlue;
             width: 100%;
-            height: 5%;
+            height: 3px;
             position: absolute;
             bottom: 0;
         }

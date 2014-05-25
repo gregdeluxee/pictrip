@@ -2,53 +2,53 @@
 <div class="optionSection">
 	<form>
 		<div class="head">
-			<h1>Preferences</h1>
-			<a href="#">Enregistrer</a>
+			<h1>{{lang.Preferences}}</h1>
+			<a href="#/">{{lang.Save}}</a>
 		</div>
-		<h2>Mes informations</h2>
+		<h2>{{lang["My information"]}}</h2>
 		<div class="optionForm">
 			<div>
-				<label>Pseudo</label>
+				<label>{{lang.Pseudo}}</label>
 				<input type="text">
 			</div>
 			<div>
-				<label>Mail</label>
+				<label>{{lang.Mail}}</label>
 				<input type="email">
 			</div>
 			<div>
-				<a class="submit">Changer mon mot de passe</a>
+				<a class="submit">{{lang["Change my password"]}}</a>
 			</div>
 		</div>
-		<h2>Moi</h2>
+		<h2>{{lang.Me}}</h2>
 		<div class="optionForm">
 			<div>
 				<div id="profilPhoto"></div>
-				<a id="changePhoto" class="submit">Changer ma photo</a>
+				<a id="changePhoto" class="submit" hm-tap="openCamera()">{{lang["Change my picture"]}}</a>
 				
 			</div>
 			<div>
-				<label>Moi</label>
+				<label>{{lang.Me}}</label>
 				<input type="text">
 			</div>
 			<div>
-				<label>Chez moi</label>
+				<label>{{lang["My place"]}}</label>
 				<input type="email">
 			</div>
 			<div>
-				<label>A propos de moi</label>
+				<label>{{lang["About me"]}}</label>
 				<textarea></textarea>
 			</div>
 		</div>
-		<h2>Options</h2>
+		<h2>{{lang.Options}}</h2>
 		<div class="optionForm">
 			<div>
-				<label for="allowLocalize">Autoriser ma localisation</label>
+				<label for="allowLocalize">{{lang["Allow my location"]}}</label>
 				<input id ="allowLocalize" type="checkbox">			
 			</div>
 		</div>
-		<h2>A propos <span>Version 0.0.1</span></h2>
+		<h2>{{lang.About}} <span>{{lang.Version}} 0.0.1</span></h2>
 		<div class="optionForm">
-			<a href="#/connexion" hm-tap="disconnect()" class="submit">Déconnexion</a>
+			<a href="#/connexion" hm-tap="disconnect()" class="submit">{{lang.Logout}}</a>
 		</div>
 
 		

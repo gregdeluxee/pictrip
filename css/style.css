@@ -110,6 +110,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /************************************************************************/
 /* line 1, _layout.scss */
 body {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 0;
   margin: 0;
   color: #fff;
@@ -119,62 +124,62 @@ body {
   background: #f4f5f6;
 }
 
-/* line 12, _layout.scss */
+/* line 17, _layout.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
   display: table;
 }
 
-/* line 17, _layout.scss */
+/* line 22, _layout.scss */
 .clearfix:after {
   clear: both;
 }
 
-/* line 21, _layout.scss */
+/* line 26, _layout.scss */
 .clearfix {
   *zoom: 1;
 }
 
-/* line 25, _layout.scss */
+/* line 30, _layout.scss */
 .hidden {
   display: none;
 }
 
-/* line 26, _layout.scss */
+/* line 31, _layout.scss */
 .overflowHidden {
   overflow: hidden;
 }
 
-/* line 27, _layout.scss */
+/* line 32, _layout.scss */
 h1, h2, h3 {
   margin: 0;
 }
 
-/* line 29, _layout.scss */
+/* line 34, _layout.scss */
 h2 {
   font-size: 36px;
 }
 
-/* line 32, _layout.scss */
+/* line 37, _layout.scss */
 h3 {
   font-size: 18px;
 }
 
-/* line 35, _layout.scss */
+/* line 40, _layout.scss */
 a {
   text-decoration: none;
   color: #6a72f0;
 }
 
-/* line 40, _layout.scss */
+/* line 45, _layout.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 42, _layout.scss */
+/* line 47, _layout.scss */
 .left {
   -webkit-transform: translate3D(-100%, 0, 0);
   -moz-transform: translate3D(-100%, 0, 0);
@@ -183,7 +188,7 @@ a {
   transform: translate3D(-100%, 0, 0);
 }
 
-/* line 43, _layout.scss */
+/* line 48, _layout.scss */
 .center {
   -webkit-transform: translate3D(0, 0, 0);
   -moz-transform: translate3D(0, 0, 0);
@@ -192,7 +197,7 @@ a {
   transform: translate3D(0, 0, 0);
 }
 
-/* line 44, _layout.scss */
+/* line 49, _layout.scss */
 .right {
   -webkit-transform: translate3D(100%, 0, 0);
   -moz-transform: translate3D(100%, 0, 0);
@@ -201,12 +206,12 @@ a {
   transform: translate3D(100%, 0, 0);
 }
 
-/* line 45, _layout.scss */
+/* line 50, _layout.scss */
 input {
   color: #434897;
 }
 
-/* line 48, _layout.scss */
+/* line 53, _layout.scss */
 input[type=text], input[type=password], input[type=email], textarea {
   width: 100%;
   background: white;
@@ -218,8 +223,9 @@ input[type=text], input[type=password], input[type=email], textarea {
   text-align: center;
 }
 
-/* line 58, _layout.scss */
+/* line 63, _layout.scss */
 input[type=submit], .submit {
+  width: 100%;
   background: #d6d7f0;
   border: none;
   border-radius: 50px;
@@ -227,34 +233,36 @@ input[type=submit], .submit {
   text-align: center;
 }
 
-/* line 65, _layout.scss */
+/* line 71, _layout.scss */
 ::-webkit-input-placeholder {
   /* WebKit browsers */
   color: #434897;
 }
 
-/* line 68, _layout.scss */
+/* line 74, _layout.scss */
 input:focus, textarea:focus {
   outline: none !important;
 }
 
-/* line 71, _layout.scss */
+/* line 77, _layout.scss */
 input[type=file] {
   position: absolute;
   left: -9999px;
 }
 
-/* line 75, _layout.scss */
+/* line 81, _layout.scss */
 .loader {
   position: absolute;
   width: 100%;
   top: 0;
   bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 6000;
   background: url("../img/loader.gif") no-repeat center center, rgba(0, 0, 0, 0.6);
 }
 
-/* line 84, _layout.scss */
+/* line 92, _layout.scss */
 .heart {
   width: 22px !important;
   height: 20px !important;
@@ -263,14 +271,14 @@ input[type=file] {
   background-size: cover;
 }
 
-/* line 92, _layout.scss */
+/* line 100, _layout.scss */
 .leftSwipe {
   position: absolute;
   width: 10%;
   height: 100%;
 }
 
-/* line 99, _layout.scss */
+/* line 107, _layout.scss */
 section.view {
   position: absolute;
   top: 0;
@@ -280,7 +288,7 @@ section.view {
   background: #f4f5f6;
 }
 
-/* line 109, _layout.scss */
+/* line 117, _layout.scss */
 .optionSection .head {
   background: #434897;
   position: relative;
@@ -288,12 +296,12 @@ section.view {
   color: #fff;
   padding: 5px 10px;
 }
-/* line 116, _layout.scss */
+/* line 124, _layout.scss */
 .optionSection .head h1 {
   font-size: 24px;
   display: inline-block;
 }
-/* line 120, _layout.scss */
+/* line 128, _layout.scss */
 .optionSection .head a {
   color: #fff;
   position: absolute;
@@ -302,7 +310,7 @@ section.view {
   text-transform: uppercase;
   font-weight: 600;
 }
-/* line 131, _layout.scss */
+/* line 139, _layout.scss */
 .optionSection h2 {
   position: relative;
   background: #6a72f0;
@@ -310,50 +318,50 @@ section.view {
   font-weight: 600;
   padding: 5px 10px;
 }
-/* line 138, _layout.scss */
+/* line 146, _layout.scss */
 .optionSection h2 span {
   font-size: 12px;
   position: absolute;
   right: 10px;
   bottom: 5px;
 }
-/* line 145, _layout.scss */
+/* line 153, _layout.scss */
 .optionSection .optionForm {
   text-align: right;
   padding: 10px 10px;
   background: #f4f5f6;
 }
-/* line 150, _layout.scss */
+/* line 158, _layout.scss */
 .optionSection .optionForm a {
   display: inline-block;
   color: #434897;
   padding: 10px;
   width: 60%;
 }
-/* line 157, _layout.scss */
+/* line 165, _layout.scss */
 .optionSection label {
   font-size: 14px;
   color: #333;
   margin-right: 10px;
 }
-/* line 162, _layout.scss */
+/* line 170, _layout.scss */
 .optionSection input, .optionSection textarea {
   text-align: left;
   width: 60%;
   max-width: 60%;
   vertical-align: middle;
 }
-/* line 168, _layout.scss */
+/* line 176, _layout.scss */
 .optionSection input[type=checkbox], .optionSection textarea[type=checkbox] {
   width: initial;
   margin-right: 30px;
 }
-/* line 173, _layout.scss */
+/* line 181, _layout.scss */
 .optionSection p {
   color: #434897;
   text-align: left;
 }
-/* line 177, _layout.scss */
+/* line 185, _layout.scss */
 .optionSection #profilPhoto {
   position: relative;
   display: inline-block;
@@ -365,6 +373,7 @@ section.view {
   border-radius: 50px;
   background-image: url("../img/maroc.jpg");
   background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -569,7 +578,7 @@ a#takePic {
 #connexion .onglet {
   position: relative;
   height: 65px;
-  margin-top: -65px;
+  margin-top: -62px;
 }
 /* line 35, _connexion.scss */
 #connexion .onglet span {
@@ -593,7 +602,7 @@ a#takePic {
 #connexion .onglet .line {
   background: #434897;
   width: 100%;
-  height: 5%;
+  height: 3px;
   position: absolute;
   bottom: 0;
 }
@@ -793,7 +802,7 @@ a#takePic {
 #profilPage .profilNav span {
   position: relative;
   display: inline-block;
-  width: 33%;
+  width: 33.333333333%;
   height: 32px;
   text-align: center;
   vertical-align: middle;
@@ -810,8 +819,12 @@ a#takePic {
 /* line 28, _profil.scss */
 #profilPage .profil {
   text-align: center;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
 }
-/* line 30, _profil.scss */
+/* line 31, _profil.scss */
 #profilPage .profil #profilPhoto {
   position: relative;
   display: inline-block;
@@ -825,13 +838,13 @@ a#takePic {
   background-position: center;
   background-repeat: no-repeat;
 }
-/* line 44, _profil.scss */
+/* line 45, _profil.scss */
 #profilPage .profil h1 {
   color: #434897;
   font-size: 36px;
   margin-top: 20px;
 }
-/* line 49, _profil.scss */
+/* line 50, _profil.scss */
 #profilPage .profil .place {
   position: relative;
   display: inline-block;
@@ -839,7 +852,7 @@ a#takePic {
   font-size: 18px;
   margin-top: 20px;
 }
-/* line 56, _profil.scss */
+/* line 57, _profil.scss */
 #profilPage .profil .place:before {
   content: "";
   position: absolute;
@@ -851,9 +864,70 @@ a#takePic {
   background: url("../img/localise_blue.png") no-repeat;
   background-size: cover;
 }
-/* line 68, _profil.scss */
+/* line 69, _profil.scss */
 #profilPage .profil .description {
   color: #434897;
   font-size: 16px;
   margin-top: 40px;
+}
+/* line 75, _profil.scss */
+#profilPage .myPics {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+/* line 80, _profil.scss */
+#profilPage .myFav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+/* line 1, _addpic.scss */
+#addPic {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-position: center;
+  background-size: cover;
+}
+/* line 10, _addpic.scss */
+#addPic form {
+  padding: 20px;
+}
+/* line 13, _addpic.scss */
+#addPic form input, #addPic form textarea {
+  text-align: left;
+  background: rgba(0, 0, 0, 0.3);
+  color: #f4f5f6;
+  font-weight: 600;
+}
+/* line 19, _addpic.scss */
+#addPic form input[type=submit] {
+  background: rgba(67, 72, 151, 0.3);
+  color: #fff;
+  text-align: center;
+}
+/* line 24, _addpic.scss */
+#addPic form textarea {
+  height: 80px;
+}
+/* line 27, _addpic.scss */
+#addPic form ::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #f4f5f6;
 }

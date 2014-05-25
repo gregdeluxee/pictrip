@@ -1,6 +1,7 @@
 function MainController($rootScope, $location, $timeout, $scope){
 
 	$rootScope.menuOpen = 0;
+	$rootScope.hideNav = 0;
 	$rootScope.loader = 0;
 
 	document.addEventListener("deviceready", function(){
@@ -15,12 +16,39 @@ function MainController($rootScope, $location, $timeout, $scope){
 			window.pictripLogin = window.localStorage.getItem("pictripLogin");
 		}
 
-		
-
+		function checkLocale() {
+      		navigator.globalization.getLocaleName(
+        		function (locale) {window.pictripLocale = locale.value;},
+        		function () {}
+      		);
+    	}
+    	function checkLanguage() {
+    		navigator.globalization.getPreferredLanguage(
+			  	function (language) {window.pictripLanguage = language.value;},
+			  	function () {}
+			);
+    	}
+    	if (navigator.globalization) {
+    		checkLocale();
+	    	checkLanguage();
+    	};
+	    	
+    	if (window.pictripLanguage == "français") {
+    		$rootScope.lang = $langFrench;
+    		$rootScope.country = $countryFR;
+    	}else{
+    		$rootScope.lang = $langEnglish;
+    		$rootScope.country = $countryEN;
+    	}
 	}, false);
+	$rootScope.lang = $langFrench;
+	$rootScope.countryLang = $countryEN;
+		
+		
 
 }
 
+const salt = "sb/@0713";
 
 var app = angular.module('pictrip', ['ngRoute', 'hmTouchEvents']);
 
@@ -32,6 +60,8 @@ app.config(['$routeProvider', function($routeProvider) {
 	.when('/explorer', {templateUrl : 'partials/explorer.html', controller: 'ExplorerController'})
 	.when('/moi', {templateUrl : 'partials/profil.html', controller: 'ProfilController'})
 	.when('/preference', {templateUrl : 'partials/preference.html', controller: 'PreferenceController'})
+	.when('/addpic', {templateUrl : 'partials/addpic.html', controller: 'AddpicController'})
+	.when('/test', {templateUrl : 'partials/test.html', controller: 'TestController'})
 	.otherwise({redirectTo: '/'});
 
 
