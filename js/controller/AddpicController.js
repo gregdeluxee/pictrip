@@ -68,7 +68,7 @@ app.controller('AddpicController', ['$scope', '$location', '$rootScope', '$route
 			"comment": $comment,
 			"pseudo": $pseudo,
 			"timestamp": currentTime,
-			"sign" : sign
+			"sign": sign
 		};
 		//Sending
 		$http({

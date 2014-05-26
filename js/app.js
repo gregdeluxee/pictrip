@@ -61,7 +61,7 @@ app.config(['$routeProvider', function($routeProvider) {
 	.when('/moi', {templateUrl : 'partials/profil.html', controller: 'ProfilController'})
 	.when('/preference', {templateUrl : 'partials/preference.html', controller: 'PreferenceController'})
 	.when('/addpic', {templateUrl : 'partials/addpic.html', controller: 'AddpicController'})
-	.when('/test', {templateUrl : 'partials/test.html', controller: 'TestController'})
+	//.when('/test', {templateUrl : 'partials/test.html', controller: 'TestController'})
 	.otherwise({redirectTo: '/'});
 
 

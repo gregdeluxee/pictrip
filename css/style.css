@@ -650,9 +650,10 @@ a#takePic {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* line 9, _home.scss */
+/* line 10, _home.scss */
 .picsContainer {
   position: absolute;
   top: 0;
@@ -663,9 +664,10 @@ a#takePic {
   -moz-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
   transition-duration: 0.5s;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* line 17, _home.scss */
+/* line 19, _home.scss */
 .pics {
   position: relative;
   display: inline-block;
@@ -676,33 +678,33 @@ a#takePic {
   background-position: center;
   background-size: cover;
 }
-/* line 28, _home.scss */
+/* line 30, _home.scss */
 .pics .comment {
   position: relative;
   width: 85%;
   margin: 0;
 }
-/* line 33, _home.scss */
+/* line 35, _home.scss */
 .pics .comment, .pics h2, .pics h3 {
   margin-left: 10px;
   margin-top: 10px;
 }
-/* line 37, _home.scss */
+/* line 39, _home.scss */
 .pics h2, .pics h3 {
   margin-top: 5px;
 }
-/* line 40, _home.scss */
+/* line 42, _home.scss */
 .pics h3 {
   display: inline-block;
 }
-/* line 43, _home.scss */
+/* line 45, _home.scss */
 .pics .likes {
   display: inline-block;
   position: absolute;
   right: 10px;
   margin-top: 10px;
 }
-/* line 49, _home.scss */
+/* line 51, _home.scss */
 .pics .likes span {
   vertical-align: middle;
 }
