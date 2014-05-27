@@ -714,24 +714,27 @@ a#takePic {
   display: none;
   position: absolute;
   top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   width: 100%;
   height: 100%;
 }
-/* line 9, _tutoriel.scss */
+/* line 12, _tutoriel.scss */
 .tutoriel p {
   font-weight: 700;
   font-size: 1.5em;
   color: #d6d7f0;
   width: 60%;
 }
-/* line 15, _tutoriel.scss */
+/* line 18, _tutoriel.scss */
 .tutoriel .tutoFav {
   position: absolute;
   right: 20px;
   top: 40%;
   text-align: right;
 }
-/* line 21, _tutoriel.scss */
+/* line 24, _tutoriel.scss */
 .tutoriel .tutoFav:after {
   content: "";
   position: absolute;
@@ -747,14 +750,14 @@ a#takePic {
   -o-transform: rotateZ(190deg);
   transform: rotateZ(190deg);
 }
-/* line 33, _tutoriel.scss */
+/* line 36, _tutoriel.scss */
 .tutoriel .tutoPhoto {
   position: absolute;
   right: 20px;
   bottom: 200px;
   text-align: right;
 }
-/* line 39, _tutoriel.scss */
+/* line 42, _tutoriel.scss */
 .tutoriel .tutoPhoto:after {
   content: "";
   position: absolute;
@@ -770,13 +773,13 @@ a#takePic {
   -o-transform: rotateZ(-10deg);
   transform: rotateZ(-10deg);
 }
-/* line 51, _tutoriel.scss */
+/* line 54, _tutoriel.scss */
 .tutoriel .tutoSearch {
   position: absolute;
   left: 40px;
   bottom: 110px;
 }
-/* line 56, _tutoriel.scss */
+/* line 59, _tutoriel.scss */
 .tutoriel .tutoSearch:after {
   content: "";
   position: absolute;

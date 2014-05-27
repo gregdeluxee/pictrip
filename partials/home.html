@@ -2,7 +2,8 @@
 <div class="picsFixe">
 	<div class="picsContainer" style="-webkit-transform: translate3d(0, {{picsContainerPos}}%, 0)">
 
-		<pt-picture ng-repeat="pic in pics" hm-swipeup="nextPic()" hm-swipedown="prevPic()" hm-options="{swipeVelocityY: 0.1, prevent_default: true}" comment="{{pic.comment_pic}}" country="{{countryLang[pic.country_pic]}}" place="{{pic.place_pic}}" pic="{{pic.file_pic}}" like="{{pic.like_pic}}"></pt-picture>
+			<pt-picture ng-repeat="pic in pics" hm-swipeup="nextPic()" hm-swipedown="prevPic()" hm-options="{swipeVelocityY: 0.1, prevent_default: true}" comment="{{pic.comment_pic}}" country="{{countryLang[pic.country_pic]}}" place="{{pic.place_pic}}" pic="{{pic.file_pic}}" like="{{pic.like_pic}}"></pt-picture>
+
 
 		<!-- 
 		<div class="pics" hm-swipeup="nextPic()" hm-swipedown="prevPic()" hm-options="{swipeVelocityY: 0.1, prevent_default: true}">

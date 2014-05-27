@@ -3,6 +3,8 @@ function MainController($rootScope, $location, $timeout, $scope){
 	$rootScope.menuOpen = 0;
 	$rootScope.hideNav = 0;
 	$rootScope.loader = 0;
+	$rootScope.picsContainerPos = 0;
+	$rootScope.currentPic = 0;
 
 	document.addEventListener("deviceready", function(){
 	    //Verification user loged or not
@@ -39,6 +41,9 @@ function MainController($rootScope, $location, $timeout, $scope){
     		$rootScope.lang = $langEnglish;
     		$rootScope.country = $countryEN;
     	}
+
+
+
 	}, false);
 	$rootScope.lang = $langFrench;
 	$rootScope.countryLang = $countryEN;

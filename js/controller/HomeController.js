@@ -3,7 +3,6 @@
 app.controller('HomeController', ['$scope', '$location', '$rootScope', '$http', 'PicFactory', '$compile', '$timeout', function ($scope, $location, $rootScope, $http, PicFactory, $compile, $timeout) {
 	
 	$rootScope.hideNav = 0;
-	$scope.picsContainerPos = 0;
 
 	$nextPic = window.localStorage.getItem("pictripNextPic");
 	if($nextPic<=0 || $nextPic == null){$nextPic = 0};
@@ -12,11 +11,13 @@ app.controller('HomeController', ['$scope', '$location', '$rootScope', '$http', 
 		$scope.nbPic = $(".pics").length; 
 	}, 10);
 	
-	$scope.nextPic = function(){
-		if ($scope.picsContainerPos > -(($scope.nbPic-1)*100)) {
-			$scope.picsContainerPos-=100;
+
+	$scope.nextPic = function($event){
+		if ($rootScope.picsContainerPos > -(($scope.nbPic-1)*100)) {
+			$rootScope.picsContainerPos-=100;
+			$rootScope.currentPic += 1;
 		};
-		if ($scope.picsContainerPos == -(($scope.nbPic-3)*100)) {
+		if ($rootScope.picsContainerPos == -(($scope.nbPic-3)*100)) {
 			$scope.nextPpics = PicFactory.getPics("newest", $nextPic).then(function(pics){
 				var newPics = ' ';
 				angular.forEach(pics, function(value, key) {
@@ -26,10 +27,10 @@ app.controller('HomeController', ['$scope', '$location', '$rootScope', '$http', 
 		     	});
 
 				//$(".picsContainer").append($compile(newPics)($scope));
-				$rootScope.$apply($(".picsContainer").append(newPics));
+				//$rootScope.$apply($(".picsContainer").append(newPics));
 
 				$timeout(function(){
-					//$scope.$apply($scope.pics);
+					$scope.$apply($scope.pics);
 					$scope.nbPic = $(".pics").length; 
 				}, 10);
 
@@ -38,11 +39,13 @@ app.controller('HomeController', ['$scope', '$location', '$rootScope', '$http', 
 				alert(msg);
 			});
 		};
+			
 	};
 
 	$scope.prevPic = function(){
-		if ($scope.picsContainerPos < 0) {
-			$scope.picsContainerPos+=100;
+		if ($rootScope.picsContainerPos < 0) {
+			$rootScope.picsContainerPos+=100;
+			$rootScope.currentPic -= 1;
 		};
 	};
 

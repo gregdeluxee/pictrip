@@ -110,4 +110,27 @@ app.controller('TestController', ['$scope', '$location', '$rootScope', function 
     }
 */
 
+
+
+	var target = $('#test30');
+	var targeturl = target.css('background-image');
+	targeturl = targeturl.replace(/^url\(["'\s]?/, '').replace(/["'\s]?\)$/, '');
+	ImgCache.isCached(targeturl, function(path, success){
+	  if(success){
+	    // already cached
+	    ImgCache.useCachedBackground(target);
+	  } else {
+	    // not there, need to cache the image
+	    ImgCache.cacheBackground(target, function(){
+	      ImgCache.useCachedBackground(target);
+	    });
+	  }
+	});	
+
+
+
+
+
+
+
 }]);
