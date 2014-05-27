@@ -11,7 +11,7 @@ app.directive('ptPicture', function(){
 			//options: "=pictureOptions"
 		},
 		link: function(scope, element, attrs){
-			console.log(scope);
+			//console.log(scope);
 		}
 	}
 });

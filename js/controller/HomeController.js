@@ -1,46 +1,75 @@
 
 
-app.controller('HomeController', ['$scope', '$location', '$rootScope', '$http', 'PicFactory', '$compile', function ($scope, $location, $rootScope, $http, PicFactory, $compile) {
+app.controller('HomeController', ['$scope', '$location', '$rootScope', '$http', 'PicFactory', '$compile', '$timeout', function ($scope, $location, $rootScope, $http, PicFactory, $compile, $timeout) {
 	
 	$rootScope.hideNav = 0;
 	$scope.picsContainerPos = 0;
-	$scope.nextPicId = 0;
 
-	$scope.alert = function(){
-		alert("test");
-	}
+	$nextPic = window.localStorage.getItem("pictripNextPic");
+	if($nextPic<=0 || $nextPic == null){$nextPic = 0};
 
+	$timeout(function(){
+		$scope.nbPic = $(".pics").length; 
+	}, 10);
+	
 	$scope.nextPic = function(){
-		if ($scope.picsContainerPos > -300) {
+		if ($scope.picsContainerPos > -(($scope.nbPic-1)*100)) {
 			$scope.picsContainerPos-=100;
 		};
+		if ($scope.picsContainerPos == -(($scope.nbPic-3)*100)) {
+			$scope.nextPpics = PicFactory.getPics("newest", $nextPic).then(function(pics){
+				var newPics = ' ';
+				angular.forEach(pics, function(value, key) {
+					newPics = newPics +'<pt-picture hm-swipeup="nextPic()" hm-swipedown="prevPic()" hm-options="{swipeVelocityY: 0.1, prevent_default: true}" comment="'+value["comment_pic"]+'" country="'+$rootScope.countryLang[value["country_pic"]]+'" place="'+value["place_pic"]+'" pic="'+value["file_pic"]+'" like="'+value["like_pic"]+'"></pt-picture>';
+		       		$nextPic = value["id_pic"] - 1;
+		       		window.localStorage.setItem("pictripNextPic", $nextPic);
+		     	});
+
+				//$(".picsContainer").append($compile(newPics)($scope));
+				$rootScope.$apply($(".picsContainer").append(newPics));
+
+				$timeout(function(){
+					//$scope.$apply($scope.pics);
+					$scope.nbPic = $(".pics").length; 
+				}, 10);
+
+			}, function(msg){
+				$rootScope.loader = 0;
+				alert(msg);
+			});
+		};
 	};
+
 	$scope.prevPic = function(){
 		if ($scope.picsContainerPos < 0) {
 			$scope.picsContainerPos+=100;
 		};
 	};
 
-	//$rootScope.loader = 1;
-	$scope.pics = PicFactory.getPics("newest", $scope.nextPicId).then(function(pics){
-		$rootScope.loader = 0;
-		$scope.pics = pics;
-
-
-		//$("#test").html(pics[0]['id_pic'] + "<br>" + pics[1]['id_pic']);
-		var newPics = '<pt-picture comment="'+pics[0]["comment_pic"]+'" country="'+pics[0]["country_pic"]+'" place="'+pics[0]["place_pic"]+'" pic="'+pics[0]["file_pic"]+'" like="'+pics[0]["like_pic"]+'"></pt-picture><pt-picture comment="'+pics[1]["comment_pic"]+'" country="'+pics[1]["country_pic"]+'" place="'+pics[1]["place_pic"]+'" pic="'+pics[1]["file_pic"]+'" like="'+pics[1]["like_pic"]+'"></pt-picture>';
-		//alert(newPics);
-		//$scope.$apply($(".picsContainer").append("<p>Pour remonter</p>"+nextPics));
-		//$scope.$digest();
-		$(".picsContainer").append($compile(newPics)($scope));
+	$scope.pics = PicFactory.pics;
+	if ($scope.pics.length == 0) {
+		$rootScope.loader = 1;
+		$scope.newPpics = PicFactory.getPics("newest", $nextPic).then(function(pics){
+			
+			$rootScope.loader = 0;
+			$scope.newPpics = pics;
+			var newPics = ' ';
+			angular.forEach(pics, function(value, key) {
+	       		$nextPic = value["id_pic"] - 1;
+	       		window.localStorage.setItem("pictripNextPic", $nextPic);
+	     	});
 		
-		
-		alert(pics);
-	}, function(msg){
-		$rootScope.loader = 0;
-		alert(msg);
-	});
+			$timeout(function(){
+				$scope.nbPic = $(".pics").length; 
+			}, 10);
 
+		}, function(msg){
+			$rootScope.loader = 0;
+			alert(msg);
+		});
+
+	};
+	
 /*
 //Get pic from server
 	function getPic(){

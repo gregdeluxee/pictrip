@@ -660,10 +660,10 @@ a#takePic {
   bottom: 0;
   height: 100%;
   width: 100%;
-  -webkit-transition-duration: 0.5s;
-  -moz-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
   background-color: rgba(0, 0, 0, 0.5);
 }
 

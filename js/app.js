@@ -7,14 +7,13 @@ function MainController($rootScope, $location, $timeout, $scope){
 	document.addEventListener("deviceready", function(){
 	    //Verification user loged or not
 		var logged = window.localStorage.getItem("pictripLogged");
-		if(logged === null){
+		if(logged !== null){
 			$timeout(function(){
-				$location.path('/connexion');
+				window.pictripLogged = true;
+				window.pictripLogin = window.localStorage.getItem("pictripLogin");
+				$location.path('/');
 			},10);
-		}else{
-			window.pictripLogged = true;
-			window.pictripLogin = window.localStorage.getItem("pictripLogin");
-		}
+		};
 
 		function checkLocale() {
       		navigator.globalization.getLocaleName(
@@ -61,7 +60,7 @@ app.config(['$routeProvider', function($routeProvider) {
 	.when('/moi', {templateUrl : 'partials/profil.html', controller: 'ProfilController'})
 	.when('/preference', {templateUrl : 'partials/preference.html', controller: 'PreferenceController'})
 	.when('/addpic', {templateUrl : 'partials/addpic.html', controller: 'AddpicController'})
-	//.when('/test', {templateUrl : 'partials/test.html', controller: 'TestController'})
+	.when('/test', {templateUrl : 'partials/test.html', controller: 'TestController'})
 	.otherwise({redirectTo: '/'});
 
 

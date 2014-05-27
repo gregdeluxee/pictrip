@@ -13,7 +13,7 @@
     bottom: 0;
     height: 100%;
     width: 100%;
-    @include transition-duration(.5s);
+    @include transition-duration(.2s);
     background-color: rgba(0,0,0,0.5);
 }
 .pics{

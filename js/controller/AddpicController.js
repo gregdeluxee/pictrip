@@ -8,15 +8,15 @@ app.controller('AddpicController', ['$scope', '$location', '$rootScope', '$route
 	openCamera();
 	function openCamera(){
 		if (!navigator.camera) {
-	        //alert("Camera API not supported", "Error");
-	        //$location.path('/');
+	        $location.path('/');
+	        alert("Camera API not supported", "Error");
 	        return;
 	    };
 	    
 		navigator.camera.getPicture(onSuccess, onFail, { 
-			quality: 95,
-			targetWidth: 1125,
-			targetHeight: 1500,
+			quality: 60,
+			targetWidth: 1500,
+			targetHeight: 2000,
 		    destinationType: Camera.DestinationType.DATA_URL
 		});
 	};
@@ -25,6 +25,7 @@ app.controller('AddpicController', ['$scope', '$location', '$rootScope', '$route
 	    $scope.addPic.pic = imageData;
 	};
 	function onFail(message) {
+	    $location.path('/');
 	    alert('Failed because: ' + message);
 	};
 //End Take a picture event

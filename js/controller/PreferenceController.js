@@ -6,6 +6,7 @@ app.controller('PreferenceController', ['$scope', '$location', '$rootScope', fun
 	$scope.disconnect = function(){
 		window.localStorage.removeItem("pictripLogged");
 		window.localStorage.removeItem("pictripLogin");
+		window.localStorage.removeItem("pictripToken");
 	};
 
 	//Take a picture event
