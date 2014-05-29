@@ -119,7 +119,7 @@ body {
   margin: 0;
   color: #fff;
   font-family: "Open sans", sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1;
   background: #f4f5f6;
 }
@@ -158,7 +158,7 @@ h1, h2, h3 {
 
 /* line 34, _layout.scss */
 h2 {
-  font-size: 36px;
+  font-size: 24px;
 }
 
 /* line 37, _layout.scss */
@@ -670,7 +670,7 @@ a#takePic {
 /* line 19, _home.scss */
 .pics {
   position: relative;
-  display: inline-block;
+  display: block;
   top: 0;
   width: 100%;
   height: 100%;
@@ -678,35 +678,54 @@ a#takePic {
   background-position: center;
   background-size: cover;
 }
-/* line 30, _home.scss */
+/* line 29, _home.scss */
+.pics .picsInfo {
+  padding-bottom: 20px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+/* line 44, _home.scss */
 .pics .comment {
   position: relative;
-  width: 85%;
+  width: 100%;
   margin: 0;
+  line-height: 1.3;
+  font-weight: 600;
 }
-/* line 35, _home.scss */
+/* line 51, _home.scss */
 .pics .comment, .pics h2, .pics h3 {
-  margin-left: 10px;
-  margin-top: 10px;
+  padding: 5px 10px;
+  text-shadow: -1px 1px 3px #000;
 }
-/* line 39, _home.scss */
-.pics h2, .pics h3 {
-  margin-top: 5px;
+/* line 55, _home.scss */
+.pics h2 {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-top: 10px;
 }
-/* line 42, _home.scss */
+/* line 60, _home.scss */
+.pics h2 span {
+  font-size: 16px;
+  white-space: nowrap;
+}
+/* line 65, _home.scss */
 .pics h3 {
-  display: inline-block;
+  text-align: right;
+  font-size: 16px;
 }
-/* line 45, _home.scss */
+/* line 69, _home.scss */
 .pics .likes {
   display: inline-block;
   position: absolute;
-  right: 10px;
-  margin-top: 10px;
+  left: 10px;
+  margin-top: 5px;
 }
-/* line 51, _home.scss */
+/* line 75, _home.scss */
 .pics .likes span {
   vertical-align: middle;
+  text-shadow: 0px 0px 1px #000;
 }
 
 /* line 2, _tutoriel.scss */

@@ -1,6 +1,6 @@
 
 
-app.controller('AddpicController', ['$scope', '$location', '$rootScope', '$route', '$http', function ($scope, $location, $rootScope, $route, $http) {
+app.controller('AddpicController', ['$scope', '$location', '$rootScope', '$route', '$http', '$timeout', function ($scope, $location, $rootScope, $route, $http, $timeout) {
 	
 	$rootScope.menuOpen = 0;
 	$rootScope.hideNav = 0;
@@ -8,26 +8,29 @@ app.controller('AddpicController', ['$scope', '$location', '$rootScope', '$route
 	openCamera();
 	function openCamera(){
 		if (!navigator.camera) {
-	        $location.path('/');
-	        alert("Camera API not supported", "Error");
-	        return;
-	    };
-	    
-		navigator.camera.getPicture(onSuccess, onFail, { 
+			$location.path('/');
+			$timeout(function(){
+				alert("Camera API not supported", "Error");
+			}, 1000);
+			
+			return;
+		}
+		
+		navigator.camera.getPicture(onSuccess, onFail, {
 			quality: 60,
 			targetWidth: 1500,
 			targetHeight: 2000,
-		    destinationType: Camera.DestinationType.DATA_URL
+			destinationType: Camera.DestinationType.DATA_URL
 		});
-	};
+	}
 	function onSuccess(imageData) {
-	    $("#addPic").css("background-image", "url(data:image/jpeg;base64," + imageData + ")");
-	    $scope.addPic.pic = imageData;
-	};
+		$("#addPic").css("background-image", "url(data:image/jpeg;base64," + imageData + ")");
+		$scope.addPic.pic = imageData;
+	}
 	function onFail(message) {
-	    $location.path('/');
-	    alert('Failed because: ' + message);
-	};
+		$timeout(function(){$location.path('/');}, 50);
+		$timeout(function(){alert('Failed because: ' + message);}, 700);
+	}
 //End Take a picture event
 
 //Reload page for new photo
@@ -45,23 +48,23 @@ app.controller('AddpicController', ['$scope', '$location', '$rootScope', '$route
 		var country = $scope.addPic.country;
 		var countryId;
 		angular.forEach($rootScope.countryLang, function(value, key) {
-	       if (value == country) {countryId=key};
-	    });
+			if (value == country) {countryId=key;}
+		});
 		$place = $scope.addPic.place;
 		$comment = $scope.addPic.comment;
 		$pseudo = window.localStorage.getItem("pictripLogin");
 		//Sign encryption
 		$token = window.localStorage.getItem("pictripToken");
-	    var encryptedToken = CryptoJS.SHA512($token);	  
-	    var encryptedToken = encryptedToken+salt;	  
-	    var encryptedToken = CryptoJS.SHA512(encryptedToken);
-	    var httpVerb = "GET";
-	    var currentTime = +new Date();
-	    var url = "http://pictrip.me/appcontrol/addpic.php?pseudo="+$pseudo+"&timestamp="+currentTime;
-	    var httpUrl = httpVerb + ":" + url;
-	    encryptedToken = encryptedToken.toString();	  
-	    var sign = CryptoJS.HmacSHA512(httpUrl,encryptedToken).toString(CryptoJS.enc.Base64);	  
-		//Prepare to send
+		var encryptedToken = CryptoJS.SHA512($token);
+		encryptedToken = encryptedToken+salt;
+		encryptedToken = CryptoJS.SHA512(encryptedToken);
+		var httpVerb = "GET";
+		var currentTime = +new Date();
+		var url = "http://pictrip.me/appcontrol/addpic.php?pseudo="+$pseudo+"&timestamp="+currentTime;
+		var httpUrl = httpVerb + ":" + url;
+		encryptedToken = encryptedToken.toString();
+		var sign = CryptoJS.HmacSHA512(httpUrl,encryptedToken).toString(CryptoJS.enc.Base64);
+//Prepare to send
 		$data = {
 			"pic": $pic,
 			"country": countryId,
@@ -73,27 +76,27 @@ app.controller('AddpicController', ['$scope', '$location', '$rootScope', '$route
 		};
 		//Sending
 		$http({
-	        method  : 'POST',
-	        url     : 'http://pictrip.me/appcontrol/addpic.php',
-	        data    : $data,  // pass in data as json
-	        headers : { 'Content-Type' : 'application/json' }
-	    })
-	    .success(addPicSuccess).error(addPicError);
-	}
+			method  : 'POST',
+			url     : 'http://pictrip.me/appcontrol/addpic.php',
+			data    : $data,  // pass in data as json
+			headers : { 'Content-Type' : 'application/json' }
+		})
+		.success(addPicSuccess).error(addPicError);
+	};
 	addPicSuccess = function(response){
 		$rootScope.loader = 0;
-		if (response['status'] == "picadded") 
+		if (response['status'] == "picadded")
 		{
 			window.localStorage.setItem("pictripToken", response['token']);
 			window.pictripToken = response['token'];
 			$location.path('/');
-		};
+		}
 		
-	}
+	};
 	addPicError = function(){
 		$rootScope.loader = 0;
 		alert("Impossible de se connecter, votre photo sera ajoutée ultérieurement.");
-	}
+	};
 //EndSubmit new pic to server
 
 }]);

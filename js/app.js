@@ -7,7 +7,7 @@ function MainController($rootScope, $location, $timeout, $scope){
 	$rootScope.currentPic = 0;
 
 	document.addEventListener("deviceready", function(){
-	    //Verification user loged or not
+		//Verification user loged or not
 		var logged = window.localStorage.getItem("pictripLogged");
 		if(logged !== null){
 			$timeout(function(){
@@ -15,38 +15,38 @@ function MainController($rootScope, $location, $timeout, $scope){
 				window.pictripLogin = window.localStorage.getItem("pictripLogin");
 				$location.path('/');
 			},10);
-		};
+		}
 
 		function checkLocale() {
-      		navigator.globalization.getLocaleName(
-        		function (locale) {window.pictripLocale = locale.value;},
-        		function () {}
-      		);
-    	}
-    	function checkLanguage() {
-    		navigator.globalization.getPreferredLanguage(
-			  	function (language) {window.pictripLanguage = language.value;},
-			  	function () {}
+			navigator.globalization.getLocaleName(
+				function (locale) {window.pictripLocale = locale.value;},
+				function () {}
 			);
-    	}
-    	if (navigator.globalization) {
-    		checkLocale();
-	    	checkLanguage();
-    	};
-	    	
-    	if (window.pictripLanguage == "français") {
-    		$rootScope.lang = $langFrench;
-    		$rootScope.country = $countryFR;
-    	}else{
-    		$rootScope.lang = $langEnglish;
-    		$rootScope.country = $countryEN;
-    	}
+		}
+		function checkLanguage() {
+			navigator.globalization.getPreferredLanguage(
+				function (language) {window.pictripLanguage = language.value;},
+				function () {}
+			);
+		}
+		if (navigator.globalization) {
+			checkLocale();
+			checkLanguage();
+		}
+
+		if (window.pictripLanguage == "français") {
+			$rootScope.lang = $langFrench;
+			$rootScope.country = $countryFR;
+		}else{
+			$rootScope.lang = $langEnglish;
+			$rootScope.country = $countryEN;
+		}
 
 
 
 	}, false);
 	$rootScope.lang = $langFrench;
-	$rootScope.countryLang = $countryEN;
+	$rootScope.countryLang = $countryFR;
 		
 		
 

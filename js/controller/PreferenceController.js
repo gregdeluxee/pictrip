@@ -12,20 +12,20 @@ app.controller('PreferenceController', ['$scope', '$location', '$rootScope', fun
 	//Take a picture event
 	$scope.openCamera = function (){
 		if (!navigator.camera) {
-	        alert("Camera API not supported", "Error");
-	        return;
-	    };
-	    
+			alert("Camera API not supported", "Error");
+			return;
+		}
+
 		navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
-		    destinationType: Camera.DestinationType.FILE_URI, cameraDirection: 1
+			destinationType: Camera.DestinationType.FILE_URI, cameraDirection: 1
 		});
 	};
 	function onSuccess(imageData) {
-	    $("#profilPhoto").css("background-image", "url(" + imageData + ")");
-	};
+		$("#profilPhoto").css("background-image", "url(" + imageData + ")");
+	}
 	function onFail(message) {
-	    alert('Failed because: ' + message);
-	};
+		alert('Failed because: ' + message);
+	}
 	//End Take a picture event
 		
 }]);
