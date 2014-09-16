@@ -1,6 +1,6 @@
 
 
-app.controller('AddpicController', ['$scope', '$location', '$rootScope', '$route', '$http', '$timeout', function ($scope, $location, $rootScope, $route, $http, $timeout) {
+app.controller('AddpicController', ['$scope', '$location', '$rootScope', '$route', '$http', '$timeout', 'SignFactory', function ($scope, $location, $rootScope, $route, $http, $timeout, SignFactory) {
 	
 	$rootScope.menuOpen = 0;
 	$rootScope.hideNav = 0;
@@ -60,7 +60,7 @@ app.controller('AddpicController', ['$scope', '$location', '$rootScope', '$route
 		encryptedToken = CryptoJS.SHA512(encryptedToken);
 		var httpVerb = "GET";
 		var currentTime = +new Date();
-		var url = "http://pictrip.me/appcontrol/addpic.php?pseudo="+$pseudo+"&timestamp="+currentTime;
+		var url = "http://tripshelper.com/appcontrol/addpic.php?pseudo="+$pseudo+"&timestamp="+currentTime;
 		var httpUrl = httpVerb + ":" + url;
 		encryptedToken = encryptedToken.toString();
 		var sign = CryptoJS.HmacSHA512(httpUrl,encryptedToken).toString(CryptoJS.enc.Base64);
@@ -72,12 +72,12 @@ app.controller('AddpicController', ['$scope', '$location', '$rootScope', '$route
 			"comment": $comment,
 			"pseudo": $pseudo,
 			"timestamp": currentTime,
-			"sign": sign
+			"sign": SignFactory.getsign("addpic", currentTime)
 		};
 		//Sending
 		$http({
 			method  : 'POST',
-			url     : 'http://pictrip.me/appcontrol/addpic.php',
+			url     : 'http://tripshelper.com/appcontrol/addpic.php',
 			data    : $data,  // pass in data as json
 			headers : { 'Content-Type' : 'application/json' }
 		})

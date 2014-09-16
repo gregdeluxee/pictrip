@@ -21,13 +21,13 @@ app.factory('PicFactory',[ 'SignFactory', '$http', '$q', function(SignFactory, $
 			};
 			//Sending
 			$http({
-		        method  : 'POST',
-		        url     : 'http://pictrip.me/appcontrol/getpic.php',
-		        data    : $data,  // pass in data as json
-		        headers : { 'Content-Type' : 'application/json' }
-		    })
-		    .success(function(data){
-		    	if (data.status == "picrecieved") 
+				method  : 'POST',
+				url     : 'http://tripshelper.com/appcontrol/getpic.php',
+				data    : $data,  // pass in data as json
+				headers : { 'Content-Type' : 'application/json' }
+			})
+			.success(function(data){
+				if (data.status == "picrecieved")
 				{
 					window.localStorage.setItem("pictripToken", data['token']);
 					window.pictripToken = data['token'];

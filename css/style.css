@@ -288,98 +288,9 @@ section.view {
   background: #f4f5f6;
 }
 
-/* line 117, _layout.scss */
-.optionSection .head {
-  background: #434897;
-  position: relative;
-  width: 100%;
-  color: #fff;
-  padding: 5px 10px;
-}
-/* line 124, _layout.scss */
-.optionSection .head h1 {
-  font-size: 24px;
-  display: inline-block;
-}
-/* line 128, _layout.scss */
-.optionSection .head a {
-  color: #fff;
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  text-transform: uppercase;
-  font-weight: 600;
-}
-/* line 139, _layout.scss */
-.optionSection h2 {
-  position: relative;
-  background: #6a72f0;
-  font-size: 14px;
-  font-weight: 600;
-  padding: 5px 10px;
-}
-/* line 146, _layout.scss */
-.optionSection h2 span {
-  font-size: 12px;
-  position: absolute;
-  right: 10px;
-  bottom: 5px;
-}
-/* line 153, _layout.scss */
-.optionSection .optionForm {
-  text-align: right;
-  padding: 10px 10px;
-  background: #f4f5f6;
-}
-/* line 158, _layout.scss */
-.optionSection .optionForm a {
-  display: inline-block;
-  color: #434897;
-  padding: 10px;
-  width: 60%;
-}
-/* line 165, _layout.scss */
-.optionSection label {
-  font-size: 14px;
-  color: #333;
-  margin-right: 10px;
-}
-/* line 170, _layout.scss */
-.optionSection input, .optionSection textarea {
-  text-align: left;
-  width: 60%;
-  max-width: 60%;
-  vertical-align: middle;
-}
-/* line 176, _layout.scss */
-.optionSection input[type=checkbox], .optionSection textarea[type=checkbox] {
-  width: initial;
-  margin-right: 30px;
-}
-/* line 181, _layout.scss */
-.optionSection p {
-  color: #434897;
-  text-align: left;
-}
-/* line 185, _layout.scss */
-.optionSection #profilPhoto {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 20px;
-  width: 100px;
-  height: 100px;
-  border: 2px solid #434897;
-  border-radius: 50px;
-  background-image: url("../img/maroc.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
 /* line 1, _nav.scss */
 #nav {
-  position: absolute;
+  position: fixed;
   z-index: 5000;
   bottom: 0;
   background: rgba(0, 0, 0, 0.2);
@@ -749,25 +660,25 @@ a#takePic {
 /* line 18, _tutoriel.scss */
 .tutoriel .tutoFav {
   position: absolute;
-  right: 20px;
-  top: 40%;
-  text-align: right;
+  left: 20px;
+  top: 42%;
+  text-align: left;
 }
 /* line 24, _tutoriel.scss */
 .tutoriel .tutoFav:after {
   content: "";
   position: absolute;
   bottom: 110%;
-  right: 0px;
+  left: 0px;
   width: 50px;
   height: 100px;
   background: url("../img/arrow.png") no-repeat;
   background-size: cover;
-  -webkit-transform: rotateZ(190deg);
-  -moz-transform: rotateZ(190deg);
-  -ms-transform: rotateZ(190deg);
-  -o-transform: rotateZ(190deg);
-  transform: rotateZ(190deg);
+  -webkit-transform: rotateZ(170deg);
+  -moz-transform: rotateZ(170deg);
+  -ms-transform: rotateZ(170deg);
+  -o-transform: rotateZ(170deg);
+  transform: rotateZ(170deg);
 }
 /* line 36, _tutoriel.scss */
 .tutoriel .tutoPhoto {
@@ -954,4 +865,101 @@ a#takePic {
 #addPic form ::-webkit-input-placeholder {
   /* WebKit browsers */
   color: #f4f5f6;
+}
+
+/* line 1, _preference.scss */
+.optionSection {
+  padding-bottom: 50px;
+}
+/* line 3, _preference.scss */
+.optionSection .head {
+  background: #434897;
+  position: relative;
+  width: 100%;
+  color: #fff;
+  padding: 5px 10px;
+}
+/* line 10, _preference.scss */
+.optionSection .head h1 {
+  font-size: 24px;
+  display: inline-block;
+}
+/* line 14, _preference.scss */
+.optionSection .head input[type=submit] {
+  color: #fff;
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: right;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 29, _preference.scss */
+.optionSection h2 {
+  position: relative;
+  background: #6a72f0;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 10px;
+}
+/* line 36, _preference.scss */
+.optionSection h2 span {
+  font-size: 12px;
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+}
+/* line 43, _preference.scss */
+.optionSection .optionForm {
+  text-align: right;
+  padding: 10px 10px;
+  background: #f4f5f6;
+}
+/* line 48, _preference.scss */
+.optionSection .optionForm a {
+  display: inline-block;
+  color: #434897;
+  padding: 10px;
+  width: 60%;
+}
+/* line 55, _preference.scss */
+.optionSection label {
+  font-size: 14px;
+  color: #333;
+  margin-right: 10px;
+}
+/* line 60, _preference.scss */
+.optionSection input, .optionSection textarea {
+  text-align: left;
+  width: 60%;
+  max-width: 60%;
+  vertical-align: middle;
+  color: #434897;
+}
+/* line 67, _preference.scss */
+.optionSection input[type=checkbox], .optionSection textarea[type=checkbox] {
+  width: initial;
+  margin-right: 30px;
+}
+/* line 72, _preference.scss */
+.optionSection p {
+  color: #434897;
+  text-align: left;
+}
+/* line 76, _preference.scss */
+.optionSection #profilPhoto {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 20px;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #434897;
+  border-radius: 50px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

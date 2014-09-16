@@ -1,19 +1,19 @@
 
 <div class="optionSection">
-	<form>
+	<form ng-submit="saveInformation()">
 		<div class="head">
 			<h1>{{lang.Preferences}}</h1>
-			<a href="#/">{{lang.Save}}</a>
+			<input type="submit" value="{{lang.Save}}">
 		</div>
 		<h2>{{lang["My information"]}}</h2>
 		<div class="optionForm">
 			<div>
 				<label>{{lang.Pseudo}}</label>
-				<input type="text">
+				<input type="text" value="{{pseudo}}" ng-model="pseudo">
 			</div>
 			<div>
 				<label>{{lang.Mail}}</label>
-				<input type="email">
+				<input type="email" value="{{email}}" ng-model="email">
 			</div>
 			<div>
 				<a class="submit">{{lang["Change my password"]}}</a>
@@ -22,28 +22,28 @@
 		<h2>{{lang.Me}}</h2>
 		<div class="optionForm">
 			<div>
-				<div id="profilPhoto"></div>
+				<div id="profilPhoto" back-img="http://tripshelper.com/img/userpic/{{picture}}"></div>
 				<a id="changePhoto" class="submit" hm-tap="openCamera()">{{lang["Change my picture"]}}</a>
 				
 			</div>
 			<div>
 				<label>{{lang.Me}}</label>
-				<input type="text">
+				<input type="text" value="{{name}}" ng-model="name">
 			</div>
 			<div>
 				<label>{{lang["My place"]}}</label>
-				<input type="email">
+				<input type="text" value="{{place}}" ng-model="place">
 			</div>
 			<div>
 				<label>{{lang["About me"]}}</label>
-				<textarea></textarea>
+				<textarea ng-model="description">{{description}}</textarea>
 			</div>
 		</div>
 		<h2>{{lang.Options}}</h2>
 		<div class="optionForm">
 			<div>
 				<label for="allowLocalize">{{lang["Allow my location"]}}</label>
-				<input id ="allowLocalize" type="checkbox">			
+				<input id ="allowLocalize" type="checkbox" ng-model="info.localisation">			
 			</div>
 		</div>
 		<h2>{{lang.About}} <span>{{lang.Version}} 0.0.1</span></h2>

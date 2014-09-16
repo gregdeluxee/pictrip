@@ -17,20 +17,20 @@
     }
     .tutoFav{
         position: absolute;
-        right: 20px;
-        top: 40%;
-        text-align: right;
+        left: 20px;
+        top: 42%;
+        text-align: left;
 
         &:after{
             content:"";
             position: absolute;
             bottom: 110%;
-            right: 0px;
+            left: 0px;
             width: 50px;
             height: 100px;
             background: url("../img/arrow.png") no-repeat;
             background-size: cover;
-            @include transform(rotateZ(190deg));
+            @include transform(rotateZ(170deg));
         }
     }
     .tutoPhoto{
